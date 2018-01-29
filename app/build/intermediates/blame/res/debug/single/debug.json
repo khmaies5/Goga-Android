@@ -1,0 +1,494 @@
+[
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu_image_fragment.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\menu\\image_fragment.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_action_about_whitle.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_action_about_whitle.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_menu.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_menu.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo2.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo2.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_toast_frame.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_toast_frame.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_backward.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_backward.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_actionbar_menu_selector.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\actionbar_menu_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_3.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_3.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_view_bg_default.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_view_bg_default.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo1.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo1.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_action_overflow_white.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_action_overflow_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_top_normal.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_top_normal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_favorites_nopicture_icon.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\favorites_nopicture_icon.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_dialog_frame.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_dialog_frame.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo3.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo3.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_about_9aga.jpg.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\about_9aga.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu_about.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\menu\\about.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_9gag_mxx.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_9gag_mxx.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_translate_white.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_translate_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_top.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_top.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_center_up_in.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\center_up_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ptr_progress_indeterminate_horizontal_holo.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\ptr_progress_indeterminate_horizontal_holo.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_shadow_bottom.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\shadow_bottom.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_9.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_holo_progressbar_circle.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_holo_progressbar_circle.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo7.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo7.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_shadow_right.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\shadow_right.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_buaa_nmb.jpg.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\buaa_nmb.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_forward.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_forward.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_view_bg_theme.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_view_bg_theme.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_refresh_listview_footer.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_refresh_listview_footer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_layout_author.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\about_layout_author.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo4.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo4.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_base_refreshable_listview.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_base_refreshable_listview.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_listitem_feed.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\listitem_feed.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_dialog_confirm_layout.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_dialog_confirm_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_9gag_circle.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_9gag_circle.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_logo_transparent.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\logo_transparent.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_forward_disable.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_forward_disable.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_about.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_browser_progress_horizontal.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_browser_progress_horizontal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_1.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_1.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_mxx_spinner_76_inner_holo.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\mxx_spinner_76_inner_holo.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_layout_9gag.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\about_layout_9gag.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_shadow_left.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\shadow_left.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_4.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_4.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_bottom_pressed.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_bottom_pressed.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_11.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_11.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_mxx_spinner_76_outer_holo.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\mxx_spinner_76_outer_holo.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_toolbar_icon_like.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\toolbar_icon_like.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_friendactivity_likeicon.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\friendactivity_likeicon.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_refresh_white.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_refresh_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_mxx_activity_open_enter.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\mxx_activity_open_enter.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_0.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_0.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_7.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_7.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_forward_green.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_forward_green.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_browser_btn_bg.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_browser_btn_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_mxx_activity_close_exit.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\mxx_activity_close_exit.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_dialog_listview_layout.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_dialog_listview_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_9gag.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher_9gag.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_weixin_actionbar_up_indicator.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\weixin_actionbar_up_indicator.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_pressed.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_pressed.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_dialog_list_item.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_dialog_list_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_common_edittext.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_common_edittext.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo6.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo6.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_10.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_10.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_loading_footer.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\loading_footer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_common_activity_browser.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_common_activity_browser.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_normal.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_normal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_spinner.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\spinner.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_listitem_feed_pressed.9.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\listitem_feed_pressed.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_image.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\fragment_image.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_web.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_web.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ptr_progress_horizontal_holo_center.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\ptr_progress_horizontal_holo_center.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_in.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_9gag.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_9gag.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_6.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_6.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_browser_toolbar_goback.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_browser_toolbar_goback.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_tab_background.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_tab_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_gag.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\fragment_gag.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_listitem_feed_selector.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\listitem_feed_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_dialog_progress_layout.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_dialog_progress_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_listitem_feed_bg.9.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\listitem_feed_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_browser_toolbar_goforward.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_browser_toolbar_goforward.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_homepage.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_homepage.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_reflash_btn_normal_pressed.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_reflash_btn_normal_pressed.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_2.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_2.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_esprit.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\esprit.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_image_viewer.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\activity_image_viewer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ptr_progress_primary_holo.9.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\ptr_progress_primary_holo.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_abc_ic_ab_back_holo_dark.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_abc_ic_ab_back_holo_dark.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_bottom_normal.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_bottom_normal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_save_white.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_save_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_copy_white.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_copy_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_5.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_5.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_action_more_whitle.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_action_more_whitle.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo8.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo8.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_mxx_refresh_listview_header.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\mxx_refresh_listview_header.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_swipeback_layout.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\swipeback_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_mxx_activity_open_exit.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\mxx_activity_open_exit.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_weixin_actionbar_more_icon.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\weixin_actionbar_more_icon.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_bottom.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_bottom.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mxx_btn_card_white_top_pressed.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_btn_card_white_top_pressed.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_center_down_out.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\center_down_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_spinner_8.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\spinner_8.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_trans.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\ic_trans.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_progressbarview.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\progressbarview.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mxx_holo_ic_share_white.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xhdpi\\mxx_holo_ic_share_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_mxx_activity_close_enter.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\mxx_activity_close_enter.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu_image_viewer.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\menu\\image_viewer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\raw_g.gif.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\raw\\g.gif"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_toolbar_backward_disable.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-hdpi\\toolbar_backward_disable.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo5.png.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo5.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\anim_spinner.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\anim\\spinner.xml"
+    }
+]

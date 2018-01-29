@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/util/IntentUtil.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/util/MxxFileUtil.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/util/MxxHttpUtil.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/view/MxxPagerSlidingTabStrip.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/view/MxxRefreshableListView.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/view/MxxScaleImageView.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/youdaofanyi/MxxYoudaoFanyiManager.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/youdaofanyi/YoudaoFanyiItem.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/goga/fragment/ImageFragment.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/goga/manager/FeedsManager.java" charset="GB18030" />
+  </component>
+</project>
