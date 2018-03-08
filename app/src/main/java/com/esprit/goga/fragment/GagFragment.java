@@ -14,6 +14,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.esprit.android.util.LoggingListener;
 import com.esprit.android.util.MxxToastUtil;
 import com.esprit.android.view.ListViewScrollObserver;
 import com.esprit.goga.bean.FeedItem;
@@ -56,7 +60,10 @@ public class GagFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		mContext = getActivity();
 		mFeedsManager = getFeedsManager();
-		if(mFeedsManager==null) return;
+		if(mFeedsManager==null){
+			System.out.println("feeds manager null");
+			return;}
+
 		mFinalBitmap = ((MainActivity)getActivity()).getFinalBitmap();
 //		QuickAdapter<FeedItem> quickAdapter = new QuickAdapter<FeedItem>(mContext, R.layout.listitem_feed, mFeedsManager.getFeedItems()) {
 //			
@@ -111,7 +118,9 @@ public class GagFragment extends Fragment {
 					MxxToastUtil.showToast(getActivity(), "Please wait...");
 					return;
 				}
+				//CommentsManager mCom = new CommentsManager(mFeedsManager.getFeedItems().get(position - 1).getId(),getActivity());
 				((MainActivity)getActivity()).showImageFragment(imageView,true,mFeedsManager.getFeedItems().get(position - 1));
+
 			}
 		});
 		mListView.post(new Runnable() {
@@ -121,12 +130,15 @@ public class GagFragment extends Fragment {
 					mListView.notifyDataSetChanged();
 				}else{
 					mListView.startUpdateImmediate();
+                    MxxToastUtil.showToast(getActivity(), "Please wait or try to refresh");
 				}
 			}
 		});
 		initScrollListener();
 	}
-	
+
+
+
 	private void initScrollListener(){
 		final int max_tranY = MxxUiUtil.dip2px(mContext, 48);
 		final View tabview = ((MainActivity)getActivity()).getTabStripLayout();
@@ -165,7 +177,7 @@ public class GagFragment extends Fragment {
 	protected FeedsManager getFeedsManager(){
 		return null;
 	}
-	
+
 	private class FeedsAdapter extends BaseAdapter{
 		private Typeface typeface;
 		public FeedsAdapter(){
@@ -218,8 +230,11 @@ public class GagFragment extends Fragment {
 				}else{
 					holder.title.setText("unknown caption");
 				}
-				mFinalBitmap.display(holder.image, item.getImages_normal());
-				holder.info.setText(item.getVotes());
+				Glide.with(mContext)
+						.load(item.getImages_normal()).override(200,200).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.image);
+				//mFinalBitmap.display(holder.image, item.getImages_normal());
+				//holder.image.setImageResource(R.drawable.esprit);
+				holder.info.setText(""+item.getUpvotes());
 			}
 			
 			

@@ -4,6 +4,13 @@ ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-65:12
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-65:12
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-65:12
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:17:1-26:12
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:17:1-31:12
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-65:12
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-65:12
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-65:12
@@ -109,8 +116,24 @@ uses-sdk
 ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:5-35:41
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:5-35:41
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:5-35:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:21:5-23:58
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:5-35:41
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:5-35:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
 		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:35:9-38
 		INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml
@@ -121,6 +144,18 @@ INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:
 		INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml
 application
 ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:37:5-63:19
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:40:9-41
 	android:icon
@@ -163,3 +198,21 @@ ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:57:
 		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:59:13-57
 	android:name
 		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:58:13-57
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\2e014cecf3f9e6b0806c7012f1e4e13e\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\df67846dd98f25c0eebdfa8764968d9a\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\a3b201d245f6830b208c42bb7d774d5a\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:26:9-47

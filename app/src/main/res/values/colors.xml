@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="year">#999999</color>
+    <color name="title">#222222</color>
     
     <color name="renren_light_blue">#ff005092</color>
     <color name="renren_light_blue_transparent">#99379bff</color>
@@ -44,7 +49,7 @@
     <color name="divider_color">#ffd3d3d3</color>
     <color name="calendar_pressed_day_bg">#ff2c577a</color>
     <color name="action_btn_n">#ff57585b</color>
-    <color name="action_btn_p">#ff379bff</color>
+    <color name="action_btn_p">#379bff</color>
     <color name="dialog_btn_p">#f3000000</color>
     <color name="dialog_btn_n">#aa000000</color>
     <color name="dialog_bg">#ff000610</color>

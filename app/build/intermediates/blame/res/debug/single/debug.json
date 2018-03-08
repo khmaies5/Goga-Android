@@ -36,6 +36,10 @@
         "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable\\mxx_view_bg_default.xml"
     },
     {
+        "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_comment_list_row.xml.flat",
+        "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\layout\\comment_list_row.xml"
+    },
+    {
         "merged": "D:\\AndroidStudio\\GogaTestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ptr_progressbar_indeterminate_holo1.png.flat",
         "source": "D:\\AndroidStudio\\GogaTestAndroid\\app\\src\\main\\res\\drawable-xxhdpi\\ptr_progressbar_indeterminate_holo1.png"
     },

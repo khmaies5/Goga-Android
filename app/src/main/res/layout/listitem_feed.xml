@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
@@ -41,32 +42,42 @@
                 android:layout_height="4dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ptr_progress_indeterminate_horizontal_holo"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <com.esprit.android.view.MxxTopCropImageView
                 android:id="@+id/feed_item_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
-            <TextView
-                android:id="@+id/feed_item_text_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_margin="4dp"
-                android:text="info"
-                android:singleLine="true"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-                android:drawableLeft="@drawable/toolbar_icon_like"
-                android:textColor="#ffefefef"
-                android:textSize="16sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/mxx_view_bg_default" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/feed_item_text_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/toolbar_icon_like"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="info"
+                android:textColor="@color/action_btn_n"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
         </RelativeLayout>
     </LinearLayout>
 

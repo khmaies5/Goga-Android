@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 public class MxxTopCropImageView extends ImageView{
 	
-	private boolean topCrop = true;
+	private boolean topCrop = false;
 
 	public MxxTopCropImageView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);

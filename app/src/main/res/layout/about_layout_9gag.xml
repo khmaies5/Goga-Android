@@ -22,11 +22,11 @@
             android:id="@+id/about_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#f111"
-            android:textSize="16sp"
-            android:padding="8dp"
             android:lineSpacingExtra="2dp"
-            android:text="@string/str_about_9gag" />
+            android:padding="8dp"
+            android:text="@string/str_about_goga"
+            android:textColor="#f111"
+            android:textSize="16sp" />
         <View 
             android:layout_width="match_parent"
             android:layout_height="16dp"/>

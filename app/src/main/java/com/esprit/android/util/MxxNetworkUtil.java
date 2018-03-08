@@ -13,6 +13,10 @@ public class MxxNetworkUtil {
 	 *            上下文
 	 * @return true 表示有网络连接 false表示没有可用网络连接
 	 */
+
+
+
+
 	public static boolean isNetworkAvailable(Context context) {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="sports_array">
+        <item>Shuttle Badminton</item>
+        <item>Tennis</item>
+        <item>FootBall</item>
+        <item>Basket Ball</item>
+        <item>Table Tennis</item>
+        <item>Chess</item>
+        <item>Hockey</item>
+    </string-array>
     <attr format="reference" name="SwipeBackLayoutStyle"/>
     <attr format="reference" name="ptrHeaderStyle"/>
     <color name="action_btn_n">#ff57585b</color>
-    <color name="action_btn_p">#ff379bff</color>
+    <color name="action_btn_p">#379bff</color>
     <color name="black_overlay">#66000000</color>
     <color name="buaa_blue">#ff379bff</color>
     <color name="buaa_blue_bak">#ff2c577a</color>
@@ -11,6 +20,9 @@
     <color name="buaa_blue_bak_3">#ff2c97e1</color>
     <color name="buaa_blue_transparent">#99379bff</color>
     <color name="calendar_pressed_day_bg">#ff2c577a</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
     <color name="content_color">#ff222222</color>
     <color name="createtime">#0e39aa</color>
     <color name="dialog_bg">#ff000610</color>
@@ -67,6 +79,7 @@
     <color name="sub_bg">#fff6f6f6</color>
     <color name="sub_text_color">#6a6a6a</color>
     <color name="time_color">#ff555555</color>
+    <color name="title">#222222</color>
     <color name="transparent">#0000</color>
     <color name="user_agent_about_light_color">#ff395f87</color>
     <color name="username">#0e39aa</color>
@@ -74,6 +87,7 @@
     <color name="welcom_page_blank_view_background">#80000000</color>
     <color name="welcom_page_enter_btn_text">#ff00868f</color>
     <color name="welcom_page_enter_page_title_text">#ffdde8e8</color>
+    <color name="year">#999999</color>
     <declare-styleable name="ImageViewEx"><attr format="boolean" name="adjustViewBounds"/><attr format="reference|color" name="emptyDrawable"/><attr format="enum" name="fillDirection">
             <enum name="none" value="0"/>
             <enum name="horizontal" value="1"/>
@@ -82,6 +96,7 @@
     <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="indicatorColor"/><attr format="color" name="underlineColor"/><attr format="color" name="dividerColor"/><attr format="dimension" name="indicatorHeight"/><attr format="dimension" name="underlineHeight"/><attr format="dimension" name="dividerPadding"/><attr format="dimension" name="tabPaddingLeftRight"/><attr format="dimension" name="scrollOffset"/><attr format="reference" name="tabBackground"/><attr format="boolean" name="shouldExpand"/><attr format="boolean" name="textAllCaps"/></declare-styleable>
     <declare-styleable name="ProgressWheel"><attr format="string" name="text"/><attr format="color" name="textColor"/><attr format="dimension" name="textSize"/><attr format="color" name="barColor"/><attr format="color" name="rimColor"/><attr format="dimension" name="rimWidth"/><attr format="dimension" name="spinSpeed"/><attr format="integer" name="delayMillis"/><attr format="color" name="circleColor"/><attr format="dimension" name="radius"/><attr format="dimension" name="barWidth"/><attr format="dimension" name="barLength"/><attr format="color" name="contourColor"/><attr format="dimension" name="contourSize"/></declare-styleable>
     <declare-styleable name="PullToRefreshHeader"><attr format="reference|color" name="ptrHeaderBackground"/><attr format="reference|dimension" name="ptrHeaderHeight"/><attr format="reference" name="ptrHeaderTitleTextAppearance"/><attr format="reference|color" name="ptrProgressBarColor"/><attr format="reference|string" name="ptrPullText"/><attr format="reference|string" name="ptrRefreshingText"/><attr format="reference|string" name="ptrReleaseText"/></declare-styleable>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr name="android:descendantFocusability"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/><attr format="boolean" name="fastScrollEnabled"/><attr format="reference" name="fastScrollVerticalThumbDrawable"/><attr format="reference" name="fastScrollVerticalTrackDrawable"/><attr format="reference" name="fastScrollHorizontalThumbDrawable"/><attr format="reference" name="fastScrollHorizontalTrackDrawable"/></declare-styleable>
     <declare-styleable name="SwipeBackLayout"><attr format="dimension" name="edge_size"/><attr name="edge_flag">
             <enum name="left" value="0"/>
             <enum name="right" value="1"/>
@@ -90,6 +105,15 @@
         </attr><attr format="reference" name="shadow_left"/><attr format="reference" name="shadow_right"/><attr format="reference" name="shadow_bottom"/></declare-styleable>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fastscroll_default_thickness">8dp</dimen>
+    <dimen name="fastscroll_margin">0dp</dimen>
+    <dimen name="fastscroll_minimum_range">50dp</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="row_padding_vertical">10dp</dimen>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="ptr_content" type="id"/>
     <item name="ptr_progress" type="id"/>
     <item name="ptr_text" type="id"/>
@@ -133,10 +157,11 @@
     <string name="pull_to_refresh_pull_label">Pull to refresh…</string>
     <string name="pull_to_refresh_refreshing_label">Loading…</string>
     <string name="pull_to_refresh_release_label">Release to refresh…</string>
-    <string name="str_about_9gag">Goga, is a social media app whereby users upload and share user-generated images, and GIFs. The app\'s content, generally referred to as "internet memes" or "internet jokes", is upvoted, downvoted, and commented on by users based on its popularity at a given time.</string>
     <string name="str_about_author">Khmaies Hassen and Malek Cheikh, undergraduate of Esprit.\nEmail:hssen.khmaies@esprit.tn, cheikh.malek@esprit.tn\n\nEstablished in 2003, the School of Engineering now hosts 5000 students in four specialties: Computer Science, Telecommunications, Civil Engineering and Electromechanical Engineering. The courses that can be followed during the day and also in the evening classes for employees. Esprit School of Engineering at the time of its creation was given as main mission to train engineers "autrement". For this purpose the school has adopted from the beginning a new pedagogy, dynamic putting the student at the center of the learning that has resulted in the adoption of the APP (learning by project / problem). www.esprit.tn</string>
+    <string name="str_about_goga">Goga, is a social media app whereby users upload and share user-generated images, and GIFs. The app\'s content, generally referred to as "internet memes" or "internet jokes", is upvoted, downvoted, and commented on by users based on its popularity at a given time.</string>
     <string name="str_back_twice_exit">Press back again quickly to exit</string>
-    <string name="str_loading">loading...</string>
+    <string name="str_loading">loading…</string>
+    <string name="titke">title</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="title_activity_image_viewer">ImageViewerActivity</string>
     <style name="AppBaseTheme" parent="android:Theme.Light">

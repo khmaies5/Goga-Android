@@ -1,69 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clickable="true" >
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
 
     <com.esprit.android.blur.MxxBlurView
         android:id="@+id/fragment_image_blurview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        
-        <com.esprit.android.view.MxxScaleImageView
-            android:id="@+id/fragment_image_scaleimageview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitCenter" />
-        <com.todddavies.components.progressbar.ProgressWheel
-            android:id="@+id/fragment_image_progresswheel"
-            android:visibility="gone"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_centerInParent="true"
-            ProgressWheel:barColor="@color/mxx_item_theme_color_alpha"
-            ProgressWheel:barLength="60dp"
-            ProgressWheel:barWidth="4dp"
-            ProgressWheel:contourColor="#66000000"
-            ProgressWheel:rimColor="#00ffffff"
-            ProgressWheel:rimWidth="4dp"
-            ProgressWheel:spinSpeed="3dp"
-            ProgressWheel:text="GIF"
-            ProgressWheel:textColor="#222222"
-            ProgressWheel:textSize="14sp" />
+        android:layout_height="match_parent"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideOverlay">
 
-        <net.frakbot.imageviewex.ImageViewEx
-            android:id="@+id/fragment_image_imageViewex"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:adjustViewBounds="true"
-            android:visibility="gone" />
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shadow_bottom">
-            <TextView 
-             android:id="@+id/fragment_image_title_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="16dp"
-            android:text="title"
-            android:background="@drawable/mxx_view_bg_default"
-            android:visibility="visible"
-            android:textColor="#ffff"/>
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.esprit.android.view.MxxScaleImageView
+                    android:id="@+id/fragment_image_scaleimageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter" />
+
+                <com.todddavies.components.progressbar.ProgressWheel
+                    android:id="@+id/fragment_image_progresswheel"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    ProgressWheel:barColor="@color/mxx_item_theme_color_alpha"
+                    ProgressWheel:barLength="60dp"
+                    ProgressWheel:barWidth="4dp"
+                    ProgressWheel:contourColor="#66000000"
+                    ProgressWheel:rimColor="#00ffffff"
+                    ProgressWheel:rimWidth="4dp"
+                    ProgressWheel:spinSpeed="3dp"
+                    ProgressWheel:text="GIF"
+                    ProgressWheel:textColor="#222222"
+                    ProgressWheel:textSize="14sp" />
+
+                <net.frakbot.imageviewex.ImageViewEx
+                    android:id="@+id/fragment_image_imageViewex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shadow_bottom">
+
+                    <TextView
+                        android:id="@+id/fragment_image_title_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/mxx_view_bg_default"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp"
+                        android:text="title"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical" />
+            </RelativeLayout>
         </LinearLayout>
-        
-        
-        
-    </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

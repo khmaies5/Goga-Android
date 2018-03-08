@@ -1,5 +1,7 @@
 package com.esprit.goga.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 import net.tsz.afinal.annotation.sqlite.Id;
 
 import org.json.JSONException;
@@ -9,37 +11,60 @@ import org.json.JSONObject;
 public class FeedItem {
 	
 	@Id
+	@SerializedName("id")
 	private String id;
+	@SerializedName("title")
 	private String caption;
+
 	private String images_small;
+	@SerializedName("type")
 	private String images_normal;
 	private String images_large;
 	private String link;
 	private String next;
-	private String votes;
-	
+	@SerializedName("numberOfUpVotes")
+	private int upvotes;
+	@SerializedName("numberOfDownVotes")
+	private int downvotes;
+	@SerializedName("userId")
+	private String userId;
+
+
 	public FeedItem(){
 		super();
 	}
-	
+
+
+
 	public FeedItem(JSONObject jsonObject){
 		try {
 
 			this.id = jsonObject.getString("id");
-			this.link = "http://192.168.1.7:3000/api/attachments/images/download/"+jsonObject.getString("type");//jsonObject.getString("link");
+			this.link = "https://goga-api.herokuapp.com/api/attachments/images/download/"+jsonObject.getString("type");//jsonObject.getString("link");
 			this.caption = jsonObject.getString("title");
-			this.votes  = "20";//jsonObject.getJSONObject("ratings").getString("count");
+			// TODO rewrite votes mothod in api
+			this.downvotes  = jsonObject.getInt("numberOfDownVotes");//jsonObject.getJSONObject("ratings").getString("count");
+			this.upvotes  = jsonObject.getInt("numberOfUpVotes");
 			//JSONObject imageJsonObject = jsonObject.getJSONObject("images");
 			//this.images_small = imageJsonObject.getString("small");
-			this.images_normal = "http://192.168.1.7:3000/api/attachments/images/download/"+jsonObject.getString("type");//imageJsonObject.getString("normal");
-			this.images_large = "http://192.168.1.7:3000/api/attachments/images/download/"+jsonObject.getString("type");//imageJsonObject.getString("large");
+			this.images_normal = "https://goga-api.herokuapp.com/api/attachments/images/download/"+jsonObject.getString("type");//imageJsonObject.getString("normal");
+			this.images_large = "https://goga-api.herokuapp.com/api/attachments/images/download/"+jsonObject.getString("type");//imageJsonObject.getString("large");
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
-	
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 	public String getId() {
 		return id;
@@ -73,9 +98,6 @@ public class FeedItem {
 		this.next = next;
 	}
 
-	public String getVotes() {
-		return votes;
-	}
 
 	public void setId(String id) {
 		this.id = id;
@@ -101,9 +123,19 @@ public class FeedItem {
 		this.link = link;
 	}
 
-	public void setVotes(String votes) {
-		this.votes = votes;
+	public int getUpvotes() {
+		return upvotes;
 	}
-	
-	
+
+	public void setUpvotes(int upvotes) {
+		this.upvotes = upvotes;
+	}
+
+	public int getDownvotes() {
+		return downvotes;
+	}
+
+	public void setDownvotes(int downvotes) {
+		this.downvotes = downvotes;
+	}
 }

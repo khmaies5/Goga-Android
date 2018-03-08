@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import net.frakbot.imageviewex.ImageViewEx;
 import net.tsz.afinal.FinalHttp;
@@ -20,9 +21,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -35,6 +40,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.esprit.android.common.activity.MxxBrowserActivity;
 import com.esprit.android.util.BitmapUtil;
 import com.esprit.android.util.MxxDialogUtil;
@@ -43,7 +49,10 @@ import com.esprit.android.util.MxxToastUtil;
 import com.esprit.android.util.SystemBarTintManager;
 import com.esprit.android.view.MxxScaleImageView;
 import com.esprit.android.youdaofanyi.MxxYoudaoFanyiManager;
+import com.esprit.goga.bean.Comments;
 import com.esprit.goga.bean.FeedItem;
+import com.esprit.goga.manager.CommentAdapter;
+import com.esprit.goga.manager.CommentsManager;
 import com.esprit.translate.MxxTranslateManager;
 import com.esprit.android.blur.MxxBlurView;
 import com.esprit.android.util.IntentUtil;
@@ -57,12 +66,19 @@ public class ImageFragment extends Fragment{
 	private MxxScaleImageView mScaleImageView;
 	private RelativeLayout rootView;
 	private FeedItem mCurrentFeedItem;
+	private Comments mComments;
 	private MxxBlurView blurView;
-	
+    private RecyclerView mRecyclerView;
+    private CommentAdapter mAdapter;
+    private List<Comments> mCommentList = new ArrayList<>();
+
+
 	private ProgressWheel mProgressWheel;
 	private ImageViewEx mImageViewEx;
+	private ImageView testImageView;
 	private TextView mImageTitleTextView;
 	private ObjectAnimator fadeInAnimator,fadeOutAnimator;
+    private CommentsManager mCommentsManager;
 	/**
 	 * Used to identify whether this Fragment is being displayed, that is, if you are viewing a large page
 	 */
@@ -70,8 +86,9 @@ public class ImageFragment extends Fragment{
 	private MxxTranslateManager mTranslateManager;
 	private MxxYoudaoFanyiManager mYoudaoFanyiManager;
 
-	public void setmCurrentFeedItem(FeedItem mCurrentFeedItem) {
+	public void setmCurrentFeedItem(FeedItem mCurrentFeedItem, List<Comments> mCommentList) {
 		this.mCurrentFeedItem = mCurrentFeedItem;
+		this.mCommentList = mCommentList;
 	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -89,7 +106,9 @@ public class ImageFragment extends Fragment{
 		((View)mImageTitleTextView.getParent()).setAlpha(0);
 		mProgressWheel = (ProgressWheel) rootView.findViewById(R.id.fragment_image_progresswheel);
 		mImageViewEx = (ImageViewEx) rootView.findViewById(R.id.fragment_image_imageViewex);
+		testImageView = (ImageView) rootView.findViewById(R.id.fragment_image_imageViewex);
 		mImageViewEx.setFillDirection(ImageViewEx.FillDirection.HORIZONTAL);
+
 		blurView = (MxxBlurView) rootView.findViewById(R.id.fragment_image_blurview);
 		
 		this.mScaleImageView = (MxxScaleImageView) rootView.findViewById(R.id.fragment_image_scaleimageview);
@@ -97,8 +116,15 @@ public class ImageFragment extends Fragment{
 		SystemBarTintManager manager = new SystemBarTintManager(getActivity());
 		View view = (View) mScaleImageView.getParent();
 		view.setPadding(0, manager.getConfig().getPixelInsetTop(true), 0, 0);
+		mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+
+
+
+
 		return rootView;
 	}
+
+
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -131,6 +157,7 @@ public class ImageFragment extends Fragment{
 //				});
 
 				mImageTitleTextView.setText(mCurrentFeedItem.getCaption());
+				System.out.println("image title "+mCurrentFeedItem.getCaption());
 
 				/*mYoudaoFanyiManager.fanyi(mCurrentFeedItem.getCaption(), new YoudaoFanyiListener() {
 					@Override
@@ -159,7 +186,26 @@ public class ImageFragment extends Fragment{
 		});
 		fadeOutAnimator=ObjectAnimator.ofFloat(((View)mImageTitleTextView.getParent()), "alpha", 1f, 0f);
 		fadeOutAnimator.setDuration(MxxScaleImageView.anim_duration/ 2);
-		
+
+       // mCommentsManager = getCommentsManager();
+      //  mCommentsManager.updateComments("5a5806efb87a6433af63cde5");
+		mAdapter = new CommentAdapter(mCommentList);
+		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(rootView.getContext());
+		mRecyclerView.setLayoutManager(mLayoutManager);
+		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+		mRecyclerView.setAdapter(mAdapter);
+
+		/*mRecyclerView.post(new Runnable() {
+			@Override
+			public void run() {
+				if(mCommentsManager.loadDbData("5a5806efb87a6433af63cde5")){
+					mAdapter.notifyDataSetChanged();
+				}else{
+					System.out.println("image fragment recycler view data empty");
+
+				}
+			}
+		});*/
 //		fadeOutAnimator.addListener(new AnimatorListener() {
 //			
 //			@Override
@@ -201,10 +247,28 @@ public class ImageFragment extends Fragment{
 				}else{
 					mScaleImageView.setTopCrop(false);
 					mScaleImageView.initAttacher();
-					checkGif();
+
+					System.out.println("feed item image frag "+mCurrentFeedItem.getId());
+					//setRecyclerView(mCurrentFeedItem.getId());
+					//checkGif();
 				}
 			}
 		});
+
+
+
+      /*  mRecyclerView.post(new Runnable() {
+            @Override
+            public void run() {
+                if(mCommentsManager.loadDbData(mCurrentFeedItem.getId())){
+                    mAdapter.notifyDataSetChanged();
+                }else{
+                    System.out.println("image fragment recycler view data empty");
+                }
+            }
+        });*/
+
+
 //		mImageTitleTextView.setOnLongClickListener(new View.OnLongClickListener() {
 //			
 //			@Override
@@ -224,47 +288,56 @@ public class ImageFragment extends Fragment{
 			}
 		});
 	}
-/*	public static void showTitleTextViewTranslate(final Context context, String content, final MxxYoudaoFanyiManager fanyiManager){
-		String[] words = content.split(" ");
-//		ArrayList<String> strings = (ArrayList<String>) Arrays.asList(words);
-		ArrayList<String> strings = new ArrayList<String>(words.length + 1);
-		strings.add(content);
-		for(String str : words){
-			strings.add(str.replaceAll(",", ""));
-		}
-		Dialog dialog = MxxDialogUtil.creatListViewDialog(context, MxxTextUtil.getTypefaceSpannableString(context, "Select a text to translate", MxxTextUtil.Roboto_Light), strings, "Cancle", new MxxDialogUtil.MxxDialogListener() {
-			@Override
-			public void onRightBtnClick() {}
-			@Override
-			public void onListItemClick(int position, String string) {
+
+
+        protected CommentsManager getCommentsManager(){
+
+            return new CommentsManager("5a5806efb87a6433af63cde5",getActivity());
+        }
 
 
 
-				fanyiManager.fanyi(string, new MxxYoudaoFanyiManager.YoudaoFanyiListener() {
-					@Override
-					public void onSuccess(YoudaoFanyiItem fanyiItem) {
-						MxxDialogUtil.creatConfirmDialog(context, MxxTextUtil.getTypefaceSpannableString(context, "Translation", MxxTextUtil.Roboto_Light), fanyiItem.getTranslationContent(true), "OK", null, true, true, null).show();
-					}
-					
-					@Override
-					public void onError(String errMsg) {
-						MxxToastUtil.showToast(context, "Translate error. \n" + errMsg);
-					}
-				}, MxxDialogUtil.creatPorgressDialog(context, null, MxxTextUtil.getTypefaceSpannableString(context, "Translating...", MxxTextUtil.Roboto_Light, false), false, true,null));
-			}
-			@Override
-			public void onLeftBtnClick() {}
-			
-			@Override
-			public void onCancel() {}
-			@Override
-			public void onListItemLongClick(int position, String string) {
-				MxxTextUtil.copyString(context, string);
-			}
-		});
-		dialog.show();
-	}
-	*/
+    /*	public static void showTitleTextViewTranslate(final Context context, String content, final MxxYoudaoFanyiManager fanyiManager){
+            String[] words = content.split(" ");
+    //		ArrayList<String> strings = (ArrayList<String>) Arrays.asList(words);
+            ArrayList<String> strings = new ArrayList<String>(words.length + 1);
+            strings.add(content);
+            for(String str : words){
+                strings.add(str.replaceAll(",", ""));
+            }
+            Dialog dialog = MxxDialogUtil.creatListViewDialog(context, MxxTextUtil.getTypefaceSpannableString(context, "Select a text to translate", MxxTextUtil.Roboto_Light), strings, "Cancle", new MxxDialogUtil.MxxDialogListener() {
+                @Override
+                public void onRightBtnClick() {}
+                @Override
+                public void onListItemClick(int position, String string) {
+
+
+
+                    fanyiManager.fanyi(string, new MxxYoudaoFanyiManager.YoudaoFanyiListener() {
+                        @Override
+                        public void onSuccess(YoudaoFanyiItem fanyiItem) {
+                            MxxDialogUtil.creatConfirmDialog(context, MxxTextUtil.getTypefaceSpannableString(context, "Translation", MxxTextUtil.Roboto_Light), fanyiItem.getTranslationContent(true), "OK", null, true, true, null).show();
+                        }
+
+                        @Override
+                        public void onError(String errMsg) {
+                            MxxToastUtil.showToast(context, "Translate error. \n" + errMsg);
+                        }
+                    }, MxxDialogUtil.creatPorgressDialog(context, null, MxxTextUtil.getTypefaceSpannableString(context, "Translating...", MxxTextUtil.Roboto_Light, false), false, true,null));
+                }
+                @Override
+                public void onLeftBtnClick() {}
+
+                @Override
+                public void onCancel() {}
+                @Override
+                public void onListItemLongClick(int position, String string) {
+                    MxxTextUtil.copyString(context, string);
+                }
+            });
+            dialog.show();
+        }
+        */
 	public static void showTitleTextViewTranslate(final Context context, String content, final MxxTranslateManager translateManager){
 		String[] words = content.split(" ");
 //		ArrayList<String> strings = (ArrayList<String>) Arrays.asList(words);
@@ -304,6 +377,8 @@ public class ImageFragment extends Fragment{
 		mScaleImageView.startScaleAnimation(smallImageView);
 		getActivity().supportInvalidateOptionsMenu();
 		mCurrentFeedItem = feedItem;
+		/*mCommentList = commentsList;
+		System.out.println("comment list "+commentsList);*/
 	}
 	
 	@Override
@@ -466,7 +541,7 @@ public class ImageFragment extends Fragment{
 		
 		private String image_url;
 		
-		public ReNameTask(String image_url) {
+		ReNameTask(String image_url) {
 			super();
 			this.image_url = image_url;
 		}
@@ -491,7 +566,7 @@ public class ImageFragment extends Fragment{
 	}
 	
 	private void loadGifInImageViewEx(String image_url){
-		try {
+		/*try {
 			File f = new File(getDownloadPath(image_url));
 			//FileInputStream is = new FileInputStream(f);
 			////////////////////
@@ -541,6 +616,12 @@ public class ImageFragment extends Fragment{
 		} catch (IOException e) {
             e.printStackTrace();
         }
+*/
+		//mImageViewEx.setImageURI(Uri.parse(image_url));
+		System.out.println("image url "+image_url);
+		Glide.with(rootView.getContext())
+				.load(image_url).into(mImageViewEx);
+
 
     }
 	

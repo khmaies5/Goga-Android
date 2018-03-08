@@ -1,38 +1,44 @@
 package com.esprit.goga.manager;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import net.tsz.afinal.FinalDb;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.content.Context;
-import android.text.TextUtils;
 
-import com.esprit.android.util.MxxHttpUtil;
+import com.esprit.android.util.APIClient;
+import com.esprit.android.util.APIInterface;
 import com.esprit.goga.bean.FeedItem;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class FeedsManager {
 	
 
-	static String URL = "http://192.168.1.7:3000/api/posts/";
-	public static final String TYPE_FRESH = "withRatings";
-	public static final String TYPE_HOT = "withRatingsDesc";
-	public static final String TYPE_TRENDING = "trending";
+	static String URL = "https://goga-api.herokuapp.com/api/posts/";
+	public static final String TYPE_FRESH = "{\"order\":\"datepublication DESC\"}";
+	public static final String TYPE_HOT = "{\"order\":\"numberOfUpVotes DESC\"}";
+	//public static final String TYPE_TRENDING = "trending";
 	private ArrayList<FeedItem> feedItems;
 	private String next = "";
 	private String base_url;
+	private String filter;
 	private FinalDb finalDb;
+	APIInterface apiService;
 	
 	public FeedsManager(String type, Context context){
 		this.feedItems = new ArrayList<FeedItem>();
 		next = "";
+		filter = type;
 		base_url = URL+type ;
+		apiService = APIClient.getClient().create(APIInterface.class);
+
 		finalDb = FinalDb.create(context, type + "_db", false);
 	}
-	
+	FeedsManager(){}
 	
 	public ArrayList<FeedItem> getFeedItems() {
 		return feedItems;
@@ -43,7 +49,6 @@ public class FeedsManager {
 	 */
 	public boolean loadDbData(){
 		try {
-			System.out.println("finaldb "+finalDb.findAll(FeedItem.class).get(0).getImages_normal());
 			this.feedItems.addAll(finalDb.findAll(FeedItem.class));
 			if (feedItems.size() > 0) {
 				this.next = feedItems.get(feedItems.size() - 1).getNext();
@@ -51,6 +56,7 @@ public class FeedsManager {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("loadDbData fmanager "+e.getMessage());
 		}
 		return false;
 	}
@@ -65,46 +71,74 @@ public class FeedsManager {
 	}
 
 
+
+
+	private void updatelisttest(){
+
+		   Call<List<FeedItem>> call = apiService.getPosts(this.filter);
+		ArrayList<FeedItem> feedItems_tmp = new ArrayList<FeedItem>();
+
+		try{
+            Response<List<FeedItem>> response = call.execute();
+            feedItems_tmp = (ArrayList<FeedItem>) response.body();
+			System.out.println("response "+response.body());
+			for(int i=0;i<response.body().size();i++){
+				response.body().get(i).setImages_large("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
+
+				response.body().get(i).setImages_normal("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
+				System.out.println(response.body().get(i).getImages_normal());
+				//item.setNext(next_tmp);
+				finalDb.save(response.body().get(i));
+			}
+        } catch (IOException e){
+            System.out.println("comments list error "+e.getMessage());
+        }
+
+
+		if(this.next.equals("")){
+			feedItems.clear();
+		}
+		feedItems.addAll(feedItems_tmp);
+
+
+	}
+
 	/**
 	 * retrieve data
 	 * Must be in a non-UI thread
 	 */
 	private void updateListInBackground(){
-		String json = MxxHttpUtil.get(getRequestUrl());
+		Call<List<FeedItem>> call = apiService.getPosts(this.filter);
+		ArrayList<FeedItem> feedItems_tmp = new ArrayList<FeedItem>();
 
-		if(TextUtils.isEmpty(json)) return;
-		 ArrayList<FeedItem> feedItems_tmp = new ArrayList<FeedItem>();
-		 String next_tmp = "";
-//		Log.e("JSON", json);
-		try {
-			JSONObject jsonObject = new JSONObject(json);
-			JSONArray feedList = jsonObject.getJSONArray("Posts");
-			System.out.println("request url "+feedList);
+		try{
+			Response<List<FeedItem>> response = call.execute();
+			if(!response.isSuccessful())
+				return;
+			feedItems_tmp = (ArrayList<FeedItem>) response.body();
 			if(this.next.equals("")){
-				finalDb.deleteByWhere(FeedItem.class, null);
-			}
-			next_tmp = "";//jsonObject.getJSONObject("paging").getString("next");
-			for(int i=0;i<feedList.length();i++){
-				FeedItem item = new FeedItem(feedList.getJSONObject(i));
-				System.out.println("item "+item.getImages_normal()+" "+ item.getId());
-				item.setCaption(feedList.getJSONObject(i).getString("title"));
-				item.setImages_normal("http://192.168.1.7:3000/api/attachments/images/download/"+feedList.getJSONObject(i).getString("type"));
-				//item.setNext(next_tmp);
-				feedItems_tmp.add(item);
-				finalDb.save(item);
-			}
-			
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("request url2 "+e.getMessage());
+				finalDb.deleteByWhere(FeedItem.class, null);}
 
+			for(int i=0;i<response.body().size();i++){
+				System.out.println(response.body().get(i).getImages_normal());				//item.setNext(next_tmp);
+
+				response.body().get(i).setImages_large("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
+
+				response.body().get(i).setImages_normal("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
+				System.out.println(response.body().get(i).getImages_normal());
+				//item.setNext(next_tmp);
+				finalDb.save(response.body().get(i));
+			}
+		} catch (IOException e){
+			System.out.println("comments list error "+e.getMessage());
 		}
+
+
 		if(this.next.equals("")){
 			feedItems.clear();
 		}
-		this.next = next_tmp;
 		feedItems.addAll(feedItems_tmp);
+
 	}
 	/**
 	 * Request link as http://infinigag-us.aws.af.cm/fresh/aAYLQ7p

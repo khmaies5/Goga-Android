@@ -25,6 +25,7 @@ import com.esprit.android.util.MxxToastUtil;
 import com.esprit.android.util.SystemBarTintManager;
 import com.esprit.android.view.MxxPagerSlidingTabStrip;
 import com.esprit.android.view.TypefaceSpan;
+import com.esprit.goga.bean.Comments;
 import com.esprit.goga.bean.FeedItem;
 import com.esprit.goga.fragment.GagFragment;
 import com.esprit.goga.fragment.GagFragmentFresh;
@@ -58,9 +59,9 @@ public class MainActivity extends FragmentActivity {
 		mTabStrip = (MxxPagerSlidingTabStrip) findViewById(R.id.main_tab);
 		ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 		fragments.add(new GagFragmentHot() );
-		fragments.add(new GagFragmentTrending() );
+		//fragments.add(new GagFragmentTrending() );
 		fragments.add(new GagFragmentFresh() );
-		mViewPager.setAdapter(new GagAdapter2(getSupportFragmentManager(),fragments,new String[]{"hot", "trending" ,"fresh"}));
+		mViewPager.setAdapter(new GagAdapter2(getSupportFragmentManager(),fragments,new String[]{"hot" ,"fresh"}));
 		mTabStrip.setViewPager(mViewPager);
 		initTint();
 		mTabStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
