@@ -12,6 +12,7 @@ import com.esprit.android.util.APIClient;
 import com.esprit.android.util.APIInterface;
 import com.esprit.goga.bean.FeedItem;
 
+import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -36,7 +37,8 @@ public class FeedsManager {
 		base_url = URL+type ;
 		apiService = APIClient.getClient().create(APIInterface.class);
 
-		finalDb = FinalDb.create(context, type + "_db", false);
+
+		//finalDb = FinalDb.create(context, type + "_db", false);
 	}
 	FeedsManager(){}
 	
@@ -49,7 +51,7 @@ public class FeedsManager {
 	 */
 	public boolean loadDbData(){
 		try {
-			this.feedItems.addAll(finalDb.findAll(FeedItem.class));
+			this.feedItems.addAll(Paper.book().read(filter,new ArrayList<FeedItem>()));
 			if (feedItems.size() > 0) {
 				this.next = feedItems.get(feedItems.size() - 1).getNext();
 				return true;
@@ -67,41 +69,14 @@ public class FeedsManager {
 	}
 	
 	public void updateNextPage(){
+
+		this.next = "";
 		updateListInBackground();
 	}
 
 
 
 
-	private void updatelisttest(){
-
-		   Call<List<FeedItem>> call = apiService.getPosts(this.filter);
-		ArrayList<FeedItem> feedItems_tmp = new ArrayList<FeedItem>();
-
-		try{
-            Response<List<FeedItem>> response = call.execute();
-            feedItems_tmp = (ArrayList<FeedItem>) response.body();
-			System.out.println("response "+response.body());
-			for(int i=0;i<response.body().size();i++){
-				response.body().get(i).setImages_large("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
-
-				response.body().get(i).setImages_normal("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
-				System.out.println(response.body().get(i).getImages_normal());
-				//item.setNext(next_tmp);
-				finalDb.save(response.body().get(i));
-			}
-        } catch (IOException e){
-            System.out.println("comments list error "+e.getMessage());
-        }
-
-
-		if(this.next.equals("")){
-			feedItems.clear();
-		}
-		feedItems.addAll(feedItems_tmp);
-
-
-	}
 
 	/**
 	 * retrieve data
@@ -116,18 +91,26 @@ public class FeedsManager {
 			if(!response.isSuccessful())
 				return;
 			feedItems_tmp = (ArrayList<FeedItem>) response.body();
-			if(this.next.equals("")){
-				finalDb.deleteByWhere(FeedItem.class, null);}
+            System.out.println("post list "+response.code());
+
+            if(this.next.equals("")){
+				//finalDb.deleteByWhere(FeedItem.class, null);
+				Paper.book().delete(filter);
+				}
+
 
 			for(int i=0;i<response.body().size();i++){
-				System.out.println(response.body().get(i).getImages_normal());				//item.setNext(next_tmp);
+				//item.setNext(next_tmp);
 
 				response.body().get(i).setImages_large("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
 
 				response.body().get(i).setImages_normal("https://goga-api.herokuapp.com/api/attachments/images/download/"+response.body().get(i).getImages_normal());
-				System.out.println(response.body().get(i).getImages_normal());
+				response.body().get(i).setLink(response.body().get(i).getImages_normal());
+				System.out.println("up votes "+response.body().get(i).getUpVotesList());
+
 				//item.setNext(next_tmp);
-				finalDb.save(response.body().get(i));
+				//finalDb.save(response.body().get(i));
+
 			}
 		} catch (IOException e){
 			System.out.println("comments list error "+e.getMessage());
@@ -137,7 +120,9 @@ public class FeedsManager {
 		if(this.next.equals("")){
 			feedItems.clear();
 		}
+		Paper.book().write(filter,feedItems_tmp);
 		feedItems.addAll(feedItems_tmp);
+
 
 	}
 	/**

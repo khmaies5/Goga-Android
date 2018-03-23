@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_5-560d69c4/data/data/com.esprit.ninegag/databases/TranslateDbManager_db" charset="GB18030" />
+    <file url="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mi_5-560d69c4/data/data/com.esprit.ninegag/databases/{_order___datepublication DESC_}_db" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/util/IntentUtil.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/util/MxxFileUtil.java" charset="GB18030" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/util/MxxHttpUtil.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/view/MxxPagerSlidingTabStrip.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/view/MxxRefreshableListView.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/esprit/android/view/MxxScaleImageView.java" charset="GB18030" />

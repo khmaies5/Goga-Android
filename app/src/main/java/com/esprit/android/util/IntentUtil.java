@@ -61,7 +61,7 @@ public class IntentUtil {
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-					final String imagePath = MxxFileUtil.getCachePath(context) +  "/9gag_image_share.png";
+					final String imagePath = MxxFileUtil.getCachePath(context) +  "/Goga_image_share.png";
 					final boolean saved = BitmapUtil.saveBitmapFile(bitmap, imagePath);
 					context.runOnUiThread(new Runnable() {
 						@Override

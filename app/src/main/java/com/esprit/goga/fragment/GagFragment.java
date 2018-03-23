@@ -16,34 +16,50 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.esprit.android.util.LoggingListener;
+import com.esprit.android.util.APIClient;
+import com.esprit.android.util.APIInterface;
 import com.esprit.android.util.MxxToastUtil;
 import com.esprit.android.view.ListViewScrollObserver;
+import com.esprit.goga.GogaMainActivity;
 import com.esprit.goga.bean.FeedItem;
 import com.esprit.android.util.MxxUiUtil;
 import com.esprit.android.util.SystemBarTintManager;
 import com.esprit.android.view.MxxRefreshableListView;
 import com.esprit.goga.MainActivity;
 import com.esprit.goga.R;
+import com.esprit.goga.manager.CommentsManager;
 import com.esprit.goga.manager.FeedsManager;
 import com.nhaarman.listviewanimations.swinginadapters.AnimationAdapter;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ObjectAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class GagFragment extends Fragment {
 	
 	private MxxRefreshableListView mListView;
 	private Context mContext;
 	private FeedsManager mFeedsManager;
+	private List<FeedItem> posts;
 	private FinalBitmap mFinalBitmap;
-	@Override
+	public String userId = "5a91a1896d89b042d452a897";
+	public String token = "1sfcwSTdBpK0SicjA5xUlI1sEoAvc46QwToVyU6jFJSgvy6g8DoM70xEi0nAOx38";
+    APIInterface apiService;
+
+    @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		mListView = (MxxRefreshableListView) inflater.inflate(R.layout.mxx_base_refreshable_listview, null);
 		initInsetTop(mListView);
-		return mListView;
+        apiService = APIClient.getClient().create(APIInterface.class);
+
+        return mListView;
 	}
 	
 	
@@ -63,8 +79,7 @@ public class GagFragment extends Fragment {
 		if(mFeedsManager==null){
 			System.out.println("feeds manager null");
 			return;}
-
-		mFinalBitmap = ((MainActivity)getActivity()).getFinalBitmap();
+		mFinalBitmap = ((GogaMainActivity)getActivity()).getFinalBitmap();
 //		QuickAdapter<FeedItem> quickAdapter = new QuickAdapter<FeedItem>(mContext, R.layout.listitem_feed, mFeedsManager.getFeedItems()) {
 //			
 //			@Override
@@ -86,9 +101,14 @@ public class GagFragment extends Fragment {
 			public void onEnd() {}
 			
 			@Override
-			public void onDoinBackground() {
+			public void onDoinBackground()
+            {
 				mFeedsManager.updateFirstPage();
-			}
+                if(mFeedsManager.getFeedItems() != null){
+                    posts = mFeedsManager.getFeedItems();
+
+                }
+            }
 		});
 		mListView.setOnBottomRefreshListener(new MxxRefreshableListView.OnBottomRefreshListener() {
 			@Override
@@ -100,9 +120,15 @@ public class GagFragment extends Fragment {
 			
 			@Override
 			public void onDoinBackground() {
+
 				mFeedsManager.updateNextPage();
+				if(mFeedsManager.getFeedItems() != null){
+					posts = mFeedsManager.getFeedItems();
+
+				}
 			}
 		});
+
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -119,10 +145,11 @@ public class GagFragment extends Fragment {
 					return;
 				}
 				//CommentsManager mCom = new CommentsManager(mFeedsManager.getFeedItems().get(position - 1).getId(),getActivity());
-				((MainActivity)getActivity()).showImageFragment(imageView,true,mFeedsManager.getFeedItems().get(position - 1));
+				((GogaMainActivity)getActivity()).showImageFragment(imageView,true,mFeedsManager.getFeedItems().get(position - 1));
 
 			}
 		});
+
 		mListView.post(new Runnable() {
 			@Override
 			public void run() {
@@ -139,9 +166,25 @@ public class GagFragment extends Fragment {
 
 
 
+	public List getLikeList(){
+        List<List<String>> likeList = new ArrayList<>();
+
+        if(mFeedsManager.getFeedItems() != null){
+            posts = mFeedsManager.getFeedItems();
+            int i;
+            for(i = 0;i<posts.size();i++){
+            //likeList.add(posts.get(i).getUpVotesList());
+            }
+
+            return likeList;
+        }
+        return null;
+
+    }
+
 	private void initScrollListener(){
 		final int max_tranY = MxxUiUtil.dip2px(mContext, 48);
-		final View tabview = ((MainActivity)getActivity()).getTabStripLayout();
+		final View tabview = ((GogaMainActivity)getActivity()).getTabStripLayout();
 		ListViewScrollObserver observer = new ListViewScrollObserver(mListView);
         observer.setOnScrollUpAndDownListener(new ListViewScrollObserver.OnListViewScrollListener() {
 			
@@ -171,7 +214,12 @@ public class GagFragment extends Fragment {
 	}
 	
 	public void refresh(){
+
 		mListView.startUpdateImmediate();
+		if(mFeedsManager.getFeedItems() != null){
+			posts = mFeedsManager.getFeedItems();
+
+		}
 	}
 	
 	protected FeedsManager getFeedsManager(){
@@ -180,7 +228,9 @@ public class GagFragment extends Fragment {
 
 	private class FeedsAdapter extends BaseAdapter{
 		private Typeface typeface;
-		public FeedsAdapter(){
+        ViewHolder holder = null;
+
+        public FeedsAdapter(){
 			super();
 			typeface = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Light.ttf");
 		}
@@ -202,11 +252,13 @@ public class GagFragment extends Fragment {
 			// TODO Auto-generated method stub
 			return 0;
 		}
-
+        protected CommentsManager getCommentsManager(String postId){
+          // int id = new Integer(postId);
+            return new CommentsManager(postId,mContext);
+        }
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO Auto-generated method stub
-			ViewHolder holder = null;
 			if(convertView==null){
 				holder = new ViewHolder();
 				convertView = LayoutInflater.from(mContext).inflate(R.layout.listitem_feed, null);
@@ -218,11 +270,102 @@ public class GagFragment extends Fragment {
 				holder.title.setTypeface(typeface);
 				holder.info = (TextView) convertView.findViewById(R.id.feed_item_text_info);
 				holder.info.setTypeface(typeface);
+				holder.down = convertView.findViewById(R.id.feed_item_text_down);
+				holder.down.setTypeface(typeface);
+				holder.comments = convertView.findViewById(R.id.feed_item_comments);
+				holder.comments.setTypeface(typeface);
 				holder.image = (ImageView) convertView.findViewById(R.id.feed_item_image);
 				convertView.setTag(holder);
+				holder.comments.setOnClickListener(new commentViewClickListene(position) {
+
+					@Override
+					public void onClick(View view) {
+					    getCommentsManager(mFeedsManager.getFeedItems().get(position).getId());
+                        ((GogaMainActivity)getActivity()).showCommentsFragment(true,mFeedsManager.getFeedItems().get(position).getId());
+
+                        MxxToastUtil.showToast(getActivity(), "comments clicked "+mFeedsManager.getFeedItems().get(position).getId());
+					}
+				});
+				holder.info.setOnClickListener(new commentViewClickListene(position) {
+
+                    @Override
+                    public void onClick(View view) {
+
+//post a comment
+                        System.out.println("upvote list "+mFeedsManager.getFeedItems().get(position).getUpVotesList());
+                        if(mFeedsManager.getFeedItems() != null){
+                        if (!mFeedsManager.getFeedItems().get(position).getUpVotesList().contains(userId)) {
+
+                            Call<FeedItem> call1 = apiService.upvotePost(mFeedsManager.getFeedItems().get(position).getId(),token);
+                            call1.enqueue(new Callback<FeedItem>() {
+                                @Override
+                                public void onResponse(Call<FeedItem> call, Response<FeedItem> response) {
+//                            mCommentsManager.postComment(commentText.getText().toString(),"5a91a1896d89b042d452a897",postId);
+                                    // refresh();
+                                    // mListView.notifyDataSetChanged();
+                                    mFeedsManager.getFeedItems().get(position).setUpvotes(+1);
+                                    holder.info.setText("" + mFeedsManager.getFeedItems().get(position).getUpvotes());
+                                    holder.info.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_bold, 0, 0, 0);
+
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<FeedItem> call, Throwable t) {
+                                    call.cancel();
+                                    MxxToastUtil.showToast(getActivity(), "network error");
+                                }
+                            });
+                        } else MxxToastUtil.showToast(getActivity(), "already upvoted");
+                    }
+
+
+                        //MxxToastUtil.showToast(getActivity(), "like clicked "+mFeedsManager.getFeedItems().get(position).getId());
+                    }
+                });
+				holder.down.setOnClickListener(new commentViewClickListene(position){
+					@Override
+					public void onClick(View view) {
+
+//post a comment
+						System.out.println("downvote list "+mFeedsManager.getFeedItems().get(position).getDownVotesList());
+						if(mFeedsManager.getFeedItems() != null){
+							if (!mFeedsManager.getFeedItems().get(position).getDownVotesList().contains(userId)) {
+
+								Call<FeedItem> call1 = apiService.downvotePost(mFeedsManager.getFeedItems().get(position).getId(),token);
+								call1.enqueue(new Callback<FeedItem>() {
+									@Override
+									public void onResponse(Call<FeedItem> call, Response<FeedItem> response) {
+//                            mCommentsManager.postComment(commentText.getText().toString(),"5a91a1896d89b042d452a897",postId);
+										// refresh();
+										// mListView.notifyDataSetChanged();
+										mFeedsManager.getFeedItems().get(position).setDownvotes(+1);
+										mFeedsManager.getFeedItems().get(position).setUpvotes(-1);
+										holder.down.setText("" + mFeedsManager.getFeedItems().get(position).getDownvotes());
+										holder.down.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_down_bold, 0, 0, 0);
+										holder.info.setText("" + mFeedsManager.getFeedItems().get(position).getUpvotes());
+										holder.info.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_not_clicked, 0, 0, 0);
+
+
+									}
+
+									@Override
+									public void onFailure(Call<FeedItem> call, Throwable t) {
+										call.cancel();
+										MxxToastUtil.showToast(getActivity(), "network error");
+									}
+								});
+							} else MxxToastUtil.showToast(getActivity(), "already downvoted");
+						}
+
+
+						//MxxToastUtil.showToast(getActivity(), "like clicked "+mFeedsManager.getFeedItems().get(position).getId());
+					}
+				});
 			}else{
 				holder = (ViewHolder) convertView.getTag();
 			}
+
 			final FeedItem item = mFeedsManager.getFeedItems().get(position);
 			if(item!=null){
 				if(item.getCaption()!=null){
@@ -234,7 +377,23 @@ public class GagFragment extends Fragment {
 						.load(item.getImages_normal()).override(200,200).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.image);
 				//mFinalBitmap.display(holder.image, item.getImages_normal());
 				//holder.image.setImageResource(R.drawable.esprit);
+			//	System.out.println("items "+item.toString());
+				if(item.getUpVotesList() != null) {
+                    if (item.getUpVotesList().contains(userId)) {
+						System.out.println("upvote list "+item.getUpVotesList().contains(userId));
+                        holder.info.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_bold, 0, 0, 0);
+                    }
+                }
+                if(item.getDownVotesList() != null) {
+                    if (item.getDownVotesList().contains(userId)) {
+
+						System.out.println("donwvote list "+item.getId());
+						holder.down.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_down_bold, 0, 0, 0);
+                    }
+                }
 				holder.info.setText(""+item.getUpvotes());
+				holder.down.setText(""+item.getDownvotes());
+				holder.comments.setText("comment");
 			}
 			
 			
@@ -242,7 +401,7 @@ public class GagFragment extends Fragment {
 		}
 		class ViewHolder{
 			public TextView title;
-			public TextView info;
+			public TextView info,down,comments;
 			public ImageView image;
 		}
 		
@@ -276,8 +435,20 @@ public class GagFragment extends Fragment {
 	        };
 	    }
 	}
-	
-	
+
+	private class commentViewClickListene implements View.OnClickListener {
+		int position;
+		public commentViewClickListene( int pos)
+		{
+			this.position = pos;
+		}
+
+		public void onClick(View v) {
+
+			System.out.println("thisssssssssssssssssssssss issssssssssssssssssss spartaaaaaaaaaaaaaa");
+
+		}
+	}
 
 
 }

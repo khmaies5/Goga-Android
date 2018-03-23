@@ -1,49 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/row_padding_vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/row_padding_vertical">
-
-    <TextView
-        android:id="@+id/commentText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="blablablbalablabal"
-        android:layout_below="@id/header" />
-
-    <View
-        android:id="@+id/mxx_dialog_divider"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/mxx_item_divider_color"
-        android:layout_below="@id/commentText"/>
-
-    <TextView
-        android:id="@+id/commentDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="2016-01-01"
-        android:textColor="@color/year"
-        android:layout_alignParentRight="true" />
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mxx_btn_card_white" >
 
         <TextView
             android:id="@+id/userName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="15pt"
             android:layout_toEndOf="@id/userImage"
             android:text="khmaies"
             android:textColor="@color/title"
@@ -56,7 +26,82 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
+
             android:src="@android:drawable/sym_def_app_icon" />
+        <TextView
+            android:id="@+id/commentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="2016-01-01"
+            android:textColor="@color/year"
+            android:layout_alignParentRight="true" />
+
     </RelativeLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/fragment_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/commentText"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:text="blablablbalablabal" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mxx_btn_card_white"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/comment_text_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/arrow_up_not_clicked"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="info"
+            android:textColor="@color/action_btn_n"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/arrow_up_not_clicked" />
+        <TextView
+            android:id="@+id/comment_text_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_toLeftOf="@+id/comment_text_up"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/arrow_down_not_clicked"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="info"
+            android:textColor="@color/action_btn_n"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/arrow_down_not_clicked"
+            android:layout_toStartOf="@+id/comment_text_up" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

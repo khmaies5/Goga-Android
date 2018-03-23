@@ -2,6 +2,8 @@ package com.esprit.goga.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+import net.tsz.afinal.annotation.sqlite.Id;
+
 import org.json.JSONObject;
 
 import java.util.List;
@@ -12,22 +14,23 @@ import java.util.List;
 
 public class Comments {
 
+    @Id
     @SerializedName("id")
     private String commentId;
 
     @SerializedName("text")
    private String text;
-    @SerializedName("profilepicture")
-    private String profilepicture;
+
+
     @SerializedName("numberOfLikes")
     private int numberOfLikes ;
     @SerializedName("numberOfDislikes")
     private int numberOfDislikes;
     @SerializedName("likes")
-    private List likes ;
+    private List<Object> likes ;
     @SerializedName("dislikes")
-    private List dislikes;
-    @SerializedName("createddate")
+    private List<Object> dislikes;
+    @SerializedName("createdDate")
    private String createdDate;
 
   //  private String id;
@@ -57,9 +60,8 @@ public class Comments {
         }
     }
 
-    public Comments(String text, String profilepicture, int numberOfLikes, int numberOfDislikes, List likes, List dislikes, String createdDate, String id, String userId, String postId) {
+    public Comments(String text, int numberOfLikes, int numberOfDislikes, List likes, List dislikes, String createdDate, String id, String userId, String postId) {
         this.text = text;
-        this.profilepicture = profilepicture;
         this.numberOfLikes = numberOfLikes;
         this.numberOfDislikes = numberOfDislikes;
         this.likes = likes;
@@ -97,12 +99,8 @@ public class Comments {
         this.text = text;
     }
 
-    public String getProfilepicture() {
-        return profilepicture;
-    }
-
-    public void setProfilepicture(String profilepicture) {
-        this.profilepicture = profilepicture;
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
     }
 
     public int getNumberOfLikes() {
@@ -121,19 +119,19 @@ public class Comments {
         this.numberOfDislikes = numberOfDislikes;
     }
 
-    public List getLikes() {
+    public List<Object> getLikes() {
         return likes;
     }
 
-    public void setLikes(List likes) {
+    public void setLikes(List<Object> likes) {
         this.likes = likes;
     }
 
-    public List getDislikes() {
+    public List<Object> getDislikes() {
         return dislikes;
     }
 
-    public void setDislikes(List dislikes) {
+    public void setDislikes(List<Object> dislikes) {
         this.dislikes = dislikes;
     }
 
@@ -162,6 +160,8 @@ public class Comments {
     public void setPostId(String postId) {
         this.postId = postId;
     }
+
+
 
 
 }

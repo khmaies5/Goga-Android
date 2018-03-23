@@ -9,10 +9,19 @@ import java.net.SocketAddress;
  * Created by khmai on 08/03/2018.
  */
 
-public class NetworkUtil {
+public class NetworkUtil extends android.os.AsyncTask {
 
 
-    public static boolean isInternetAvailable(String address, int port, int timeoutMs) {
+
+    @Override
+    protected Object doInBackground(Object[] objects) {
+        //do something asynchronously
+
+        return isInternetAvailable("8.8.8.8", 53, 1000);
+    }
+
+
+    public boolean isInternetAvailable(String address, int port, int timeoutMs) {
         try {
             Socket sock = new Socket();
             SocketAddress sockaddr = new InetSocketAddress(address, port);
@@ -24,4 +33,8 @@ public class NetworkUtil {
 
         } catch (IOException e) { return false; }
     }
+
+
+
+
 }

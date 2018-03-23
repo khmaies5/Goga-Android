@@ -27,6 +27,7 @@ import com.esprit.android.view.MxxPagerSlidingTabStrip;
 import com.esprit.android.view.TypefaceSpan;
 import com.esprit.goga.bean.Comments;
 import com.esprit.goga.bean.FeedItem;
+import com.esprit.goga.fragment.CommentsFragment;
 import com.esprit.goga.fragment.GagFragment;
 import com.esprit.goga.fragment.GagFragmentFresh;
 import com.esprit.goga.fragment.GagFragmentHot;
@@ -34,12 +35,16 @@ import com.esprit.goga.fragment.GagFragmentTrending;
 import com.esprit.goga.fragment.ImageFragment;
 import com.esprit.goga.R;
 
+import io.paperdb.Paper;
+
 public class MainActivity extends FragmentActivity {
 	private ViewPager mViewPager;
+	private View mCommentView;
 	private MxxPagerSlidingTabStrip mTabStrip;
 	private View tabLayout;
 //	private MxxScaleImageView scaleImageView;
 	private ImageFragment mImageFragment;
+	private CommentsFragment mCommentsFragment;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +52,16 @@ public class MainActivity extends FragmentActivity {
 		MxxSystemBarTintUtil.setSystemBarTintColor(this);
 		SpannableString spannableString = new SpannableString("Goga");
 		String font = "LockScreen_Clock.ttf";
-		
+		Paper.init(getApplicationContext());
 		spannableString.setSpan(new TypefaceSpan(font, Typeface.createFromAsset(getAssets(), font)), 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		getActionBar().setTitle(spannableString);
 		getActionBar().setDisplayShowHomeEnabled(false);
 		setContentView(R.layout.activity_main);
-		
+		mImageFragment = (ImageFragment) getSupportFragmentManager().findFragmentById(R.id.main_image_fragment);
+		mCommentsFragment = (CommentsFragment) getSupportFragmentManager().findFragmentById(R.id.main_comments_fragment);
+
 		mViewPager = (ViewPager) findViewById(R.id.main_viewpager);
+		//mCommentView = findViewById(R.id.comment_view);
 //		scaleImageView = (MxxScaleImageView) findViewById(R.id.main_mxxScaleImageView1);
 		mViewPager.setOffscreenPageLimit(3);
 		mTabStrip = (MxxPagerSlidingTabStrip) findViewById(R.id.main_tab);
@@ -86,13 +94,12 @@ public class MainActivity extends FragmentActivity {
 				
 			}
 		});
-		mImageFragment = (ImageFragment) getSupportFragmentManager().findFragmentById(R.id.main_image_fragment);
 		mTabStrip.post(new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				getSupportFragmentManager().beginTransaction().hide(mImageFragment).commit();
+				//getSupportFragmentManager().beginTransaction().hide(mImageFragment).commit();
 			}
 		});
 		
@@ -148,14 +155,34 @@ public class MainActivity extends FragmentActivity {
 	
 	public void showImageFragment(ImageView smallImageView , boolean show, FeedItem item){
 		//showActionbarWithTabs(!show);
+		/*Bundle bundle = new Bundle();
+		bundle.putString("postId", item.getId());*/
+		//mImageFragment.setArguments(bundle);
+
 		if(show){
 			getSupportFragmentManager().beginTransaction().show(mImageFragment).commit();
 			mImageFragment.startScaleAnimation(smallImageView, item);
+
 		}else{
 			getSupportFragmentManager().beginTransaction().hide(mImageFragment).commit();
 		}
 		
 	}
+
+	public void showCommentsFragment(boolean show,String id){
+		if(show){
+
+			getSupportFragmentManager().beginTransaction().show(mCommentsFragment).commit();
+
+       mCommentsFragment.showComments(id);
+		}else {
+			getSupportFragmentManager().beginTransaction().hide(mCommentsFragment).commit();
+		}
+
+
+
+	}
+
 	public void showActionbarWithTabs(boolean show){
 		if(show){
 //			getActionBar().show();
@@ -290,10 +317,12 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		if(mImageFragment.canBack()){
+		if(mImageFragment != null && mImageFragment.canBack()){
 			mImageFragment.goBack();
 			
-		}else{
+		}else if(mCommentsFragment != null && mCommentsFragment.canBack()) {
+		    mCommentsFragment.goBack();
+        }else{
 			long cur_time = System.currentTimeMillis();
 			
 			if((cur_time - last_back_time) < 1000 ){

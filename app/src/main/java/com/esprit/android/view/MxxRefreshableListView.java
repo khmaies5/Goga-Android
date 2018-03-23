@@ -80,7 +80,7 @@ public class MxxRefreshableListView extends RefreshableListView {
 		setOnUpdateTask(new OnUpdateTask() {
 			boolean isNetworkAvailable = false;
 			public void onUpdateStart() {
-				isNetworkAvailable = NetworkUtil.isInternetAvailable("8.8.8.8", 53, 1000);
+				isNetworkAvailable = MxxNetworkUtil.isNetworkAvailable(getContext());
 				setInternetEnabled(isNetworkAvailable);
 				if(isNetworkAvailable){
 					if(onTopRefreshListener!=null) onTopRefreshListener.onStart();
@@ -103,8 +103,7 @@ public class MxxRefreshableListView extends RefreshableListView {
 
 			public void onUpdateStart() {
 				if(!bottomHasMore) return;
-				isNetworkAvailable = NetworkUtil
-						.isInternetAvailable("8.8.8.8", 53, 1000);
+				isNetworkAvailable = MxxNetworkUtil.isNetworkAvailable(getContext());
 				setInternetEnabled(isNetworkAvailable);
 				if(isNetworkAvailable){
 					if(onBottomRefreshListener!=null) onBottomRefreshListener.onStart();

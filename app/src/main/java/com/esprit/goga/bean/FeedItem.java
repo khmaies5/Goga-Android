@@ -7,6 +7,8 @@ import net.tsz.afinal.annotation.sqlite.Id;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 
 public class FeedItem {
 	
@@ -28,13 +30,17 @@ public class FeedItem {
 	private int downvotes;
 	@SerializedName("userId")
 	private String userId;
+	@SerializedName("upvotes")
+	private List<Object> upVotesList;
+	@SerializedName("downvotes")
+	private List<Object> downVotesList;
+	private String test;
 
+	//public FeedItem(){
+	//	super();
+	//}
 
-	public FeedItem(){
-		super();
-	}
-
-
+public FeedItem(){}
 
 	public FeedItem(JSONObject jsonObject){
 		try {
@@ -57,6 +63,21 @@ public class FeedItem {
 		}
 	}
 
+	public List<Object> getUpVotesList() {
+		return upVotesList;
+	}
+
+	public void setUpVotesList(List<Object> upVotesList) {
+		this.upVotesList = upVotesList;
+	}
+
+	public List<Object> getDownVotesList() {
+		return downVotesList;
+	}
+
+	public void setDownVotesList(List<Object> downVotesList) {
+		this.downVotesList = downVotesList;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -137,5 +158,19 @@ public class FeedItem {
 
 	public void setDownvotes(int downvotes) {
 		this.downvotes = downvotes;
+	}
+
+	@Override
+	public String toString() {
+		return "FeedItem{" +
+				"id='" + id + '\'' +
+				", caption='" + caption + '\'' +
+				", images_normal='" + images_normal + '\'' +
+				", upvotes=" + upvotes +
+				", downvotes=" + downvotes +
+				", userId='" + userId + '\'' +
+				", upVotesList=" + upVotesList +
+				", downVotesList=" + downVotesList +
+				'}';
 	}
 }

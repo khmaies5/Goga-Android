@@ -15,9 +15,9 @@
     <string name="menu_action_copy_title">copy title</string>
     <string name="menu_action_translate_title">translate title to French</string>
     <string name="menu_action_share">share</string>
-     <string name="menu_action_share_all">share both</string>
-      <string name="menu_action_share_text">share title only</string>
-       <string name="menu_action_share_image">share image only</string>
+    <string name="menu_action_share_all">share both</string>
+    <string name="menu_action_share_text">share title only</string>
+    <string name="menu_action_share_image">share image only</string>
     <string name="mxx_view_string_nonetwork">no network</string>
     <string name="mxx_view_string_nomore">no more to load</string>
     <string name="str_back_twice_exit">Press back again quickly to exit</string>
@@ -34,4 +34,9 @@
         <item>Chess</item>
         <item>Hockey</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_goga_main">GogaMainActivity</string>
 </resources>

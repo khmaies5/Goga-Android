@@ -20,7 +20,7 @@ import android.widget.Toast;
  */
 public class MxxFileUtil {
 	
-	static String ROOT_PATH = "/9gag_mxx";
+	static String ROOT_PATH = "/goga_esprit";
 	static String DOWNLOAD_PATH = "/download";
 	static String IMAGE_PATH = "/Image";
 	static String AUDIO_PATH = "/Audio";
@@ -33,6 +33,7 @@ public class MxxFileUtil {
 	 */
 	public static boolean haveSdCard(){
 		return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ;
+
 	}
 	
 	/**

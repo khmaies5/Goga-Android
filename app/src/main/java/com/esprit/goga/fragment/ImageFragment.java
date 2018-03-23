@@ -33,32 +33,40 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.esprit.android.common.activity.MxxBrowserActivity;
 import com.esprit.android.util.BitmapUtil;
 import com.esprit.android.util.MxxDialogUtil;
 import com.esprit.android.util.MxxFileUtil;
 import com.esprit.android.util.MxxToastUtil;
+import com.esprit.android.util.MxxUiUtil;
 import com.esprit.android.util.SystemBarTintManager;
+import com.esprit.android.view.ListViewScrollObserver;
+import com.esprit.android.view.MxxRefreshableListView;
 import com.esprit.android.view.MxxScaleImageView;
 import com.esprit.android.youdaofanyi.MxxYoudaoFanyiManager;
-import com.esprit.goga.bean.Comments;
+import com.esprit.goga.GogaMainActivity;
 import com.esprit.goga.bean.FeedItem;
-import com.esprit.goga.manager.CommentAdapter;
-import com.esprit.goga.manager.CommentsManager;
+
 import com.esprit.translate.MxxTranslateManager;
 import com.esprit.android.blur.MxxBlurView;
 import com.esprit.android.util.IntentUtil;
 import com.esprit.android.util.MxxTextUtil;
 import com.esprit.goga.MainActivity;
 import com.esprit.goga.R;
+import com.nhaarman.listviewanimations.swinginadapters.AnimationAdapter;
 import com.todddavies.components.progressbar.ProgressWheel;
 
 public class ImageFragment extends Fragment{
@@ -66,11 +74,12 @@ public class ImageFragment extends Fragment{
 	private MxxScaleImageView mScaleImageView;
 	private RelativeLayout rootView;
 	private FeedItem mCurrentFeedItem;
-	private Comments mComments;
 	private MxxBlurView blurView;
     private RecyclerView mRecyclerView;
-    private CommentAdapter mAdapter;
-    private List<Comments> mCommentList = new ArrayList<>();
+	private MxxRefreshableListView mListView;
+
+
+	private Context mContext;
 
 
 	private ProgressWheel mProgressWheel;
@@ -78,7 +87,7 @@ public class ImageFragment extends Fragment{
 	private ImageView testImageView;
 	private TextView mImageTitleTextView;
 	private ObjectAnimator fadeInAnimator,fadeOutAnimator;
-    private CommentsManager mCommentsManager;
+    private String postId;
 	/**
 	 * Used to identify whether this Fragment is being displayed, that is, if you are viewing a large page
 	 */
@@ -86,9 +95,8 @@ public class ImageFragment extends Fragment{
 	private MxxTranslateManager mTranslateManager;
 	private MxxYoudaoFanyiManager mYoudaoFanyiManager;
 
-	public void setmCurrentFeedItem(FeedItem mCurrentFeedItem, List<Comments> mCommentList) {
+	public void setmCurrentFeedItem(FeedItem mCurrentFeedItem) {
 		this.mCurrentFeedItem = mCurrentFeedItem;
-		this.mCommentList = mCommentList;
 	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -99,6 +107,7 @@ public class ImageFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		// TODO Auto-generated method stub
 		rootView = (RelativeLayout) inflater.inflate(R.layout.fragment_image, null);
 		rootView.setVisibility(View.INVISIBLE);
@@ -110,26 +119,58 @@ public class ImageFragment extends Fragment{
 		mImageViewEx.setFillDirection(ImageViewEx.FillDirection.HORIZONTAL);
 
 		blurView = (MxxBlurView) rootView.findViewById(R.id.fragment_image_blurview);
-		
+
 		this.mScaleImageView = (MxxScaleImageView) rootView.findViewById(R.id.fragment_image_scaleimageview);
 		mScaleImageView.setBlurView(blurView);
 		SystemBarTintManager manager = new SystemBarTintManager(getActivity());
 		View view = (View) mScaleImageView.getParent();
 		view.setPadding(0, manager.getConfig().getPixelInsetTop(true), 0, 0);
-		mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+		mListView = rootView.findViewById(R.id.recycler_view);
 
 
+        setListViewHeightBasedOnChildren(mListView);
+		initInsetTop(mListView);
 
 
 		return rootView;
 	}
 
+    /**** Method for Setting the Height of the ListView dynamically.
+     **** Hack to fix the issue of not showing all the items of the ListView
+     **** when placed inside a ScrollView  ****/
+    public static void setListViewHeightBasedOnChildren(MxxRefreshableListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null)
+            return;
 
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
+        int totalHeight = 0;
+        View view = null;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            view = listAdapter.getView(i, view, listView);
+            if (i == 0)
+                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, MxxRefreshableListView.LayoutParams.WRAP_CONTENT));
+
+            view.measure(View.MeasureSpec.makeMeasureSpec(desiredWidth, View.MeasureSpec.AT_MOST), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+            totalHeight += view.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+    }
+
+	private void initInsetTop(View rootView){
+		SystemBarTintManager tintManager = new SystemBarTintManager(getActivity());
+		SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+		rootView.setPadding(0, config.getPixelInsetTop(true) + MxxUiUtil.dip2px(getActivity(), 48), config.getPixelInsetRight(), config.getPixelInsetBottom());
+		rootView.requestLayout();
+	}
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
+		mContext = getActivity();
 		isClose = false;
 		mTranslateManager = new MxxTranslateManager(getActivity());
 		mYoudaoFanyiManager = new MxxYoudaoFanyiManager(getActivity());
@@ -187,25 +228,10 @@ public class ImageFragment extends Fragment{
 		fadeOutAnimator=ObjectAnimator.ofFloat(((View)mImageTitleTextView.getParent()), "alpha", 1f, 0f);
 		fadeOutAnimator.setDuration(MxxScaleImageView.anim_duration/ 2);
 
-       // mCommentsManager = getCommentsManager();
-      //  mCommentsManager.updateComments("5a5806efb87a6433af63cde5");
-		mAdapter = new CommentAdapter(mCommentList);
-		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(rootView.getContext());
-		mRecyclerView.setLayoutManager(mLayoutManager);
-		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-		mRecyclerView.setAdapter(mAdapter);
 
-		/*mRecyclerView.post(new Runnable() {
-			@Override
-			public void run() {
-				if(mCommentsManager.loadDbData("5a5806efb87a6433af63cde5")){
-					mAdapter.notifyDataSetChanged();
-				}else{
-					System.out.println("image fragment recycler view data empty");
 
-				}
-			}
-		});*/
+
+
 //		fadeOutAnimator.addListener(new AnimatorListener() {
 //			
 //			@Override
@@ -241,14 +267,14 @@ public class ImageFragment extends Fragment{
 				if(isClose){
 					mScaleImageView.setImageDrawable(null);
 					rootView.setVisibility(View.GONE);
-					((MainActivity)getActivity()).showImageFragment(null, false, null);
+					((GogaMainActivity)getActivity()).showImageFragment(null, false, null);
 					getActivity().supportInvalidateOptionsMenu();
 					isClose = false;
 				}else{
 					mScaleImageView.setTopCrop(false);
 					mScaleImageView.initAttacher();
 
-					System.out.println("feed item image frag "+mCurrentFeedItem.getId());
+					System.out.println("feed item image frag "+postId);
 					//setRecyclerView(mCurrentFeedItem.getId());
 					//checkGif();
 				}
@@ -256,17 +282,6 @@ public class ImageFragment extends Fragment{
 		});
 
 
-
-      /*  mRecyclerView.post(new Runnable() {
-            @Override
-            public void run() {
-                if(mCommentsManager.loadDbData(mCurrentFeedItem.getId())){
-                    mAdapter.notifyDataSetChanged();
-                }else{
-                    System.out.println("image fragment recycler view data empty");
-                }
-            }
-        });*/
 
 
 //		mImageTitleTextView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -288,12 +303,6 @@ public class ImageFragment extends Fragment{
 			}
 		});
 	}
-
-
-        protected CommentsManager getCommentsManager(){
-
-            return new CommentsManager("5a5806efb87a6433af63cde5",getActivity());
-        }
 
 
 
@@ -367,6 +376,8 @@ public class ImageFragment extends Fragment{
 	}
 	
 	public void startScaleAnimation(ImageView smallImageView, FeedItem feedItem){
+		this.postId = feedItem.getId();
+
 		mImageTitleTextView.setText(feedItem.getCaption());
 		rootView.setVisibility(View.VISIBLE);
 //		mImageTitleTextView.setVisibility(View.VISIBLE);
@@ -377,8 +388,7 @@ public class ImageFragment extends Fragment{
 		mScaleImageView.startScaleAnimation(smallImageView);
 		getActivity().supportInvalidateOptionsMenu();
 		mCurrentFeedItem = feedItem;
-		/*mCommentList = commentsList;
-		System.out.println("comment list "+commentsList);*/
+
 	}
 	
 	@Override
@@ -635,5 +645,11 @@ public class ImageFragment extends Fragment{
 		int start = image_url.lastIndexOf("/") + 1;
 		return MxxFileUtil.getDownloadPath() + "/" + image_url.substring(start) + ".tmp";
 	}
+
+
+
+
+
+
 
 }

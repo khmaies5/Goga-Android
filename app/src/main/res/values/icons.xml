@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_icon_comments">&#xf086;</string>
+    <string name="fa_icon_comment">&#xf27a;</string>
+    <string name="fa_icon_upvote">&#xf062;</string>
+    <string name="fa_icon_downvote">&#xf063;</string>
+
+
+
+</resources>

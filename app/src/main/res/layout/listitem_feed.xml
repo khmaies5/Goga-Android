@@ -68,15 +68,44 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_margin="4dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:drawableLeft="@drawable/toolbar_icon_like"
+                android:drawableLeft="@drawable/arrow_up_not_clicked"
                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:text="info"
                 android:textColor="@color/action_btn_n"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:drawableStart="@drawable/arrow_up_not_clicked" />
+            <TextView
+                android:id="@+id/feed_item_text_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/feed_item_text_info"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/arrow_down_not_clicked"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="info"
+                android:textColor="@color/action_btn_n"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/arrow_down_not_clicked" />
+            <TextView
+                android:id="@+id/feed_item_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/comment_multiple"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="comments"
+                android:textColor="@color/action_btn_n"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/comment_multiple" />
 
         </RelativeLayout>
     </LinearLayout>
