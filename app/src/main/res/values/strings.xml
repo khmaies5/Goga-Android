@@ -23,6 +23,8 @@
     <string name="str_back_twice_exit">Press back again quickly to exit</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="str_loading">loading…</string>
+    <string name="str_upload">say something…</string>
+    <string name="str_waiting">waiting…</string>
     <string name="str_about_goga">Goga, is a social media app whereby users upload and share user-generated images, and GIFs. The app\'s content, generally referred to as "internet memes" or "internet jokes", is upvoted, downvoted, and commented on by users based on its popularity at a given time.</string>
     <string name="str_about_author">Khmaies Hassen and Malek Cheikh, undergraduate of Esprit.\nEmail:hssen.khmaies@esprit.tn, cheikh.malek@esprit.tn\n\nEstablished in 2003, the School of Engineering now hosts 5000 students in four specialties: Computer Science, Telecommunications, Civil Engineering and Electromechanical Engineering. The courses that can be followed during the day and also in the evening classes for employees. Esprit School of Engineering at the time of its creation was given as main mission to train engineers "autrement". For this purpose the school has adopted from the beginning a new pedagogy, dynamic putting the student at the center of the learning that has resulted in the adoption of the APP (learning by project / problem). www.esprit.tn</string>
     <string-array name="sports_array">

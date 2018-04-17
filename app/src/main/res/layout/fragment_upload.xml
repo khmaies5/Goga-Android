@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/mxx_btn_card_white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/mxx_btn_card_white" >
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="15pt"
+                    android:layout_toEndOf="@id/userImage"
+                    android:text="khmaies"
+                    android:textColor="@color/title"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/userImage" />
+
+                <ImageView
+                    android:id="@+id/userImage"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+
+                    android:src="@android:drawable/sym_def_app_icon" />
+                <TextView
+                    android:id="@+id/commentDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="2016-01-01"
+                    android:textColor="@color/year"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="2dp"
+                android:background="#ffdfdfdf" >
+
+                <TextView
+                    android:id="@+id/feed_item_text_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/str_loading"
+                    android:textColor="#f666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/feed_item_image_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ptr_progress_indeterminate_horizontal_holo"
+                    android:visibility="visible" />
+
+                <com.esprit.android.view.MxxTopCropImageView
+                    android:id="@+id/feed_item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/mxx_view_bg_default" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/feed_item_text_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/arrow_up_not_clicked"
+                    android:drawableStart="@drawable/arrow_up_not_clicked"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="Upload"
+                    android:textColor="@color/action_btn_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>

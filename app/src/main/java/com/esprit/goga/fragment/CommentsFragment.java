@@ -2,10 +2,12 @@ package com.esprit.goga.fragment;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -27,7 +29,6 @@ import com.esprit.android.util.SystemBarTintManager;
 import com.esprit.android.view.MxxRefreshableListView;
 import com.esprit.android.view.MxxScaleImageView;
 import com.esprit.goga.GogaMainActivity;
-import com.esprit.goga.MainActivity;
 import com.esprit.goga.R;
 import com.esprit.goga.bean.Comments;
 import com.esprit.goga.manager.CommentsManager;
@@ -38,6 +39,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.esprit.goga.LogInActivity.PREFS;
 
 
 /**
@@ -59,6 +63,8 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
     private TextView comment_up,comment_down;
     private List<Comments> commentsList;
     APIInterface apiService;
+    public String userId; //= "5a91a1896d89b042d452a897";
+    public String token;// = "1sfcwSTdBpK0SicjA5xUlI1sEoAvc46QwToVyU6jFJSgvy6g8DoM70xEi0nAOx38";
 
 
     private boolean isClose;
@@ -74,6 +80,12 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        SharedPreferences editor = getContext().getSharedPreferences(PREFS, MODE_PRIVATE);
+
+        userId = editor.getString("userId",null);
+        System.out.println("user idddddddddd "+userId.toString());
+        token = editor.getString("token",null);
+
     }
 
     @Override
@@ -271,7 +283,7 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
             {
                 //post a comment
                 if(commentText.getText().length() > 0){
-                Call<Comments> call1 = apiService.postComment(commentText.getText().toString(),"5a91a1896d89b042d452a897",postId);
+                Call<Comments> call1 = apiService.postComment(commentText.getText().toString(),userId,postId);
                 call1.enqueue(new Callback<Comments>() {
                     @Override
                     public void onResponse(Call<Comments> call, Response<Comments> response) {
@@ -314,6 +326,7 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
 
     private class CommentsAdapter extends BaseAdapter {
         private Typeface typeface;
+        CommentsFragment.CommentsAdapter.ViewHolder holder = null;
         public CommentsAdapter(){
             super();
             typeface = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Light.ttf");
@@ -355,7 +368,6 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             // TODO Auto-generated method stub
-            CommentsFragment.CommentsAdapter.ViewHolder holder = null;
             if(convertView==null){
                 holder = new CommentsFragment.CommentsAdapter.ViewHolder();
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.comment_list_row, null);
@@ -376,6 +388,81 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
                 holder.comment_up.setOnClickListener(CommentsFragment.this);
 
                 convertView.setTag(holder);
+
+                holder.comment_up.setOnClickListener(new likeViewClickListener(position) {
+
+                    @Override
+                    public void onClick(View view) {
+
+//post a comment
+                        System.out.println("upvote list "+mCommentsManager.getComments().get(position).getLikes());
+                        if(mCommentsManager.getComments() != null){
+                            if (!mCommentsManager.getComments().get(position).getLikes().contains(userId)) {
+
+                                Call<Comments> call1 = apiService.upvoteComment(mCommentsManager.getComments().get(position).getCommentId(),token);
+                                call1.enqueue(new Callback<Comments>() {
+                                    @Override
+                                    public void onResponse(Call<Comments> call, Response<Comments> response) {
+//                            mCommentsManager.postComment(commentText.getText().toString(),"5a91a1896d89b042d452a897",postId);
+                                        // refresh();
+                                        // mListView.notifyDataSetChanged();
+                                        mCommentsManager.getComments().get(position).setNumberOfLikes(+1);
+                                        holder.comment_up.setText("" +mCommentsManager.getComments().get(position).getNumberOfLikes());
+                                        holder.comment_up.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_bold, 0, 0, 0);
+
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Comments> call, Throwable t) {
+                                        call.cancel();
+                                        MxxToastUtil.showToast(getActivity(), "network error");
+                                    }
+                                });
+                            } else MxxToastUtil.showToast(getActivity(), "already upvoted");
+                        }
+
+
+                        //MxxToastUtil.showToast(getActivity(), "like clicked "+mFeedsManager.getFeedItems().get(position).getId());
+                    }
+                });
+                holder.comment_down.setOnClickListener(new likeViewClickListener(position){
+                    @Override
+                    public void onClick(View view) {
+
+//post a comment
+                        System.out.println("downvote list "+mCommentsManager.getComments().get(position).getDislikes());
+                        if(mCommentsManager.getComments() != null){
+                            if (!mCommentsManager.getComments().get(position).getDislikes().contains(userId)) {
+
+                                Call<Comments> call1 = apiService.downvoteComment(mCommentsManager.getComments().get(position).getCommentId(),token);
+                                call1.enqueue(new Callback<Comments>() {
+                                    @Override
+                                    public void onResponse(Call<Comments> call, Response<Comments> response) {
+//                            mCommentsManager.postComment(commentText.getText().toString(),"5a91a1896d89b042d452a897",postId);
+                                        // refresh();
+                                        // mListView.notifyDataSetChanged();
+                                        mCommentsManager.getComments().get(position).setNumberOfDislikes(+1);
+                                        mCommentsManager.getComments().get(position).setNumberOfLikes(-1);
+                                        holder.comment_down.setText("" + mCommentsManager.getComments().get(position).getNumberOfDislikes());
+                                        holder.comment_down.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_down_bold, 0, 0, 0);
+                                        holder.comment_up.setText("" + mCommentsManager.getComments().get(position).getNumberOfLikes());
+                                        holder.comment_up.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_not_clicked, 0, 0, 0);
+
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Comments> call, Throwable t) {
+                                        call.cancel();
+                                        MxxToastUtil.showToast(getActivity(), "network error");
+                                    }
+                                });
+                            } else MxxToastUtil.showToast(getActivity(), "already downvoted");
+                        }
+
+
+                        //MxxToastUtil.showToast(getActivity(), "like clicked "+mFeedsManager.getFeedItems().get(position).getId());
+                    }
+                });
             }else{
                 holder = (CommentsFragment.CommentsAdapter.ViewHolder) convertView.getTag();
             }
@@ -386,18 +473,36 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
                 }else{
                     holder.commentText.setText("be the first to comment");
                 }
-                Glide.with(mContext)
-                        .load(R.drawable.ic_launcher_9gag).override(200,200).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.userImage);
-                //mFinalBitmap.display(holder.image, item.getImages_normal());
-                //holder.image.setImageResource(R.drawable.esprit);
-                //if(comment.getUser().getUsername() == null){
-                holder.userName.setText("unknown");
+
+                if(comment.getLikes() != null) {
+                    if (comment.getLikes().contains(userId)) {
+                        System.out.println("upvote list "+comment.getLikes().contains(userId));
+                        holder.comment_up.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_bold, 0, 0, 0);
+                    }
+                }
+                if(comment.getDislikes() != null) {
+                    if (comment.getDislikes().contains(userId)) {
+
+                        System.out.println("donwvote list "+comment.getCommentId());
+                        holder.comment_down.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_down_bold, 0, 0, 0);
+                    }
+                }
+
                 holder.comment_down.setText(""+comment.getNumberOfDislikes());
                 holder.comment_up.setText(""+comment.getNumberOfLikes());
-                //}else
-                //holder.userName.setText(comment.getUser().getUsername());
+                //mFinalBitmap.display(holder.image, item.getImages_normal());
+                //holder.image.setImageResource(R.drawable.esprit);
+                if(comment.getUser() == null){
+                holder.userName.setText("unknown");
 
-                holder.commentDate.setText((comment.getCreatedDate()));
+                }else {
+                    holder.userName.setText(comment.getUser().getUsername());
+                    Glide.with(mContext)
+                            .load(comment.getUser().getProfilePicture()).override(200,200).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.userImage);
+
+                }
+                System.out.println("comments user "+comment.getUser());
+                holder.commentDate.setText(comment.getCreatedDate());
             }
 
 
@@ -439,5 +544,30 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+
+
+    private class likeViewClickListener implements View.OnClickListener {
+        int position;
+        public likeViewClickListener( int pos)
+        {
+            this.position = pos;
+        }
+
+        public void onClick(View v) {
+
+            System.out.println("thisssssssssssssssssssssss issssssssssssssssssss spartaaaaaaaaaaaaaa");
+
+        }
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+
+            menu.findItem(R.id.action_refresh).setVisible(false);
+            menu.findItem(R.id.action_more).setVisible(false);
+
+         super.onPrepareOptionsMenu(menu);
+    }
 
 }

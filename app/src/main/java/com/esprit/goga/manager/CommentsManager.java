@@ -21,6 +21,7 @@ import com.esprit.android.util.APIClient;
 import com.esprit.android.util.APIInterface;
 import com.esprit.goga.bean.Comments;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -95,32 +96,38 @@ public class CommentsManager {
 
     }
 
-    private void updateListInBackground(String postId){
+    private void updateListInBackground(String postId) {
         Call<List<Comments>> call = apiService.getComments(this.postId);
         ArrayList<Comments> comments_tmp = new ArrayList<Comments>();
+        // ResponseBody body ;
 
-        try{
+        ResponseBody body = null;
+        try {
             Response<List<Comments>> response = call.execute();
-            if(!response.isSuccessful())
+            if (!response.isSuccessful())
                 return;
+
+
             comments_tmp = (ArrayList<Comments>) response.body();
-            if(this.next.equals("")){
-                finalDb.deleteByWhere(Comments.class, null);}
-
-            for(int i=0;i<response.body().size();i++){
-                //item.setNext(next_tmp);
-
-                System.out.println("comments "+response.body().get(i));
-
-                //item.setNext(next_tmp);
-                finalDb.save(response.body().get(i));
+            if (this.next.equals("")) {
+                finalDb.deleteByWhere(Comments.class, null);
             }
-        } catch (IOException e){
-            System.out.println("comments list error "+e.getMessage());
+
+            for (int i = 0; i < response.body().size(); i++) {
+                //item.setNext(next_tmp);
+
+                System.out.println("comments " + response.body().get(i));
+
+                comments_tmp.get(i).getUser().setProfilePicture("https://goga-api.herokuapp.com/api/attachments/profilepicture/download/" + response.body().get(i).getUser().getProfilePicture());
+                //item.setNext(next_tmp);
+                finalDb.save(comments_tmp.get(i));
+            }
+        } catch (IOException e) {
+            System.out.println("comments list error " + e.getMessage());
         }
 
 
-        if(this.next.equals("")){
+        if (this.next.equals("")) {
             comments.clear();
         }
         comments.addAll(comments_tmp);

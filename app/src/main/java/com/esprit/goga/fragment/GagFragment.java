@@ -2,6 +2,7 @@ package com.esprit.goga.fragment;
 
 import net.tsz.afinal.FinalBitmap;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -40,6 +41,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.esprit.goga.LogInActivity.PREFS;
+
 public class GagFragment extends Fragment {
 	
 	private MxxRefreshableListView mListView;
@@ -47,8 +51,8 @@ public class GagFragment extends Fragment {
 	private FeedsManager mFeedsManager;
 	private List<FeedItem> posts;
 	private FinalBitmap mFinalBitmap;
-	public String userId = "5a91a1896d89b042d452a897";
-	public String token = "1sfcwSTdBpK0SicjA5xUlI1sEoAvc46QwToVyU6jFJSgvy6g8DoM70xEi0nAOx38";
+	public String userId ;//= "5a91a1896d89b042d452a897";
+	public String token ;//= "1sfcwSTdBpK0SicjA5xUlI1sEoAvc46QwToVyU6jFJSgvy6g8DoM70xEi0nAOx38";
     APIInterface apiService;
 
     @Override
@@ -75,6 +79,10 @@ public class GagFragment extends Fragment {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 		mContext = getActivity();
+		SharedPreferences editor = mContext.getSharedPreferences(PREFS, MODE_PRIVATE);
+
+		userId = editor.getString("userId",null);
+		token = editor.getString("token",null);
 		mFeedsManager = getFeedsManager();
 		if(mFeedsManager==null){
 			System.out.println("feeds manager null");
@@ -306,7 +314,7 @@ public class GagFragment extends Fragment {
                                     mFeedsManager.getFeedItems().get(position).setUpvotes(+1);
                                     holder.info.setText("" + mFeedsManager.getFeedItems().get(position).getUpvotes());
                                     holder.info.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_bold, 0, 0, 0);
-
+									response.raw().body().close();
 
                                 }
 
@@ -345,7 +353,7 @@ public class GagFragment extends Fragment {
 										holder.down.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_down_bold, 0, 0, 0);
 										holder.info.setText("" + mFeedsManager.getFeedItems().get(position).getUpvotes());
 										holder.info.setCompoundDrawablesWithIntrinsicBounds(R.drawable.arrow_up_not_clicked, 0, 0, 0);
-
+										response.raw().body().close();
 
 									}
 
@@ -374,7 +382,7 @@ public class GagFragment extends Fragment {
 					holder.title.setText("unknown caption");
 				}
 				Glide.with(mContext)
-						.load(item.getImages_normal()).override(200,200).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.image);
+						.load(item.getImages_normal()).override(200,200).diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.error).into(holder.image);
 				//mFinalBitmap.display(holder.image, item.getImages_normal());
 				//holder.image.setImageResource(R.drawable.esprit);
 			//	System.out.println("items "+item.toString());

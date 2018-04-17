@@ -1,5 +1,7 @@
 package com.esprit.goga;
 
+import android.Manifest;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.esprit.android.util.MxxSystemBarTintUtil;
 import com.esprit.android.util.MxxToastUtil;
@@ -33,6 +36,9 @@ import com.esprit.goga.fragment.GagFragment;
 import com.esprit.goga.fragment.GagFragmentFresh;
 import com.esprit.goga.fragment.GagFragmentHot;
 import com.esprit.goga.fragment.ImageFragment;
+import com.esprit.goga.fragment.UploadFragment;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 
 import net.tsz.afinal.FinalBitmap;
 
@@ -51,6 +57,8 @@ public class GogaMainActivity extends AppCompatActivity {
     //	private MxxScaleImageView scaleImageView;
     private ImageFragment mImageFragment;
     private CommentsFragment mCommentsFragment;
+    private UploadFragment mUploadFragment;
+    private  FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +75,7 @@ public class GogaMainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mImageFragment = (ImageFragment) getSupportFragmentManager().findFragmentById(R.id.main_image_fragment);
         mCommentsFragment = (CommentsFragment) getSupportFragmentManager().findFragmentById(R.id.main_comments_fragment);
-
+        mUploadFragment = (UploadFragment) getSupportFragmentManager().findFragmentById(R.id.main_upload_fragment);
 
         mViewPager = (ViewPager) findViewById(R.id.main_viewpager);
         //mCommentView = findViewById(R.id.comment_view);
@@ -113,12 +121,35 @@ public class GogaMainActivity extends AppCompatActivity {
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final PermissionListener permissionlistener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Toast.makeText(GogaMainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(GogaMainActivity.this,UploadActivity.class));
+
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                Toast.makeText(GogaMainActivity.this, "You can't upload new post. Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+
+        };
+
+
+         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                //showUploadFragment(true);
+                TedPermission.with(GogaMainActivity.this)
+                        .setPermissionListener(permissionlistener)
+                        .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                        .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        .check();
             }
         });
     }
@@ -179,11 +210,25 @@ public class GogaMainActivity extends AppCompatActivity {
         if(show){
             getSupportFragmentManager().beginTransaction().show(mImageFragment).commit();
             mImageFragment.startScaleAnimation(smallImageView, item);
+            fab.hide();
+
 
         }else{
             getSupportFragmentManager().beginTransaction().hide(mImageFragment).commit();
+            fab.show();
         }
 
+    }
+
+    public void showUploadFragment(boolean show){
+        if(show){
+            getSupportFragmentManager().beginTransaction().show(mUploadFragment).commit();
+            mUploadFragment.showUploadFragment();
+            fab.hide();
+        }else{
+            getSupportFragmentManager().beginTransaction().hide(mUploadFragment).commit();
+            fab.show();
+        }
     }
 
     public void showCommentsFragment(boolean show,String id){
@@ -192,8 +237,11 @@ public class GogaMainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().show(mCommentsFragment).commit();
 
             mCommentsFragment.showComments(id);
+            fab.hide();
+
         }else {
             getSupportFragmentManager().beginTransaction().hide(mCommentsFragment).commit();
+            fab.show();
         }
 
 
@@ -223,7 +271,7 @@ public class GogaMainActivity extends AppCompatActivity {
 //		View rootView = findViewById(R.id.main_layout_root);
         tabLayout = findViewById(R.id.main_tab_layout);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) tabLayout.getLayoutParams();
-        layoutParams.topMargin = config.getPixelInsetTop(true);
+        layoutParams.topMargin = config.getPixelInsetTop(true) - 62;
 //		layoutParams.height = MxxUiUtil.dip2px(this, 48) + config.getPixelInsetTop(true);
         tabLayout.requestLayout();
     }
@@ -302,7 +350,7 @@ public class GogaMainActivity extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // TODO Auto-generated method stub
-        if(mImageFragment!=null){
+        if(mImageFragment!=null || mCommentsFragment!=null){
             menu.findItem(R.id.action_refresh).setVisible(!mImageFragment.canBack());
             menu.findItem(R.id.action_more).setVisible(!mImageFragment.canBack());
         }
@@ -339,6 +387,8 @@ public class GogaMainActivity extends AppCompatActivity {
 
         }else if(mCommentsFragment != null && mCommentsFragment.canBack()) {
             mCommentsFragment.goBack();
+        }else if(mUploadFragment != null && mUploadFragment.canBack()) {
+            mUploadFragment.goBack();
         }else{
             long cur_time = System.currentTimeMillis();
 

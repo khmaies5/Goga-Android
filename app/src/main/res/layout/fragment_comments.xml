@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:background="@color/main_bg_grey"
         android:layout_alignBottom="@+id/recycler_view"
+        android:gravity="end"
         android:orientation="horizontal"
         >
 

@@ -5,6 +5,7 @@
     android:id="@+id/main_layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical" >
 
 
@@ -41,6 +42,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_image" />
+
+    <fragment
+        class="com.esprit.goga.fragment.UploadFragment"
+        android:id="@+id/main_upload_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_upload" />
 
 
 

@@ -1,14 +1,20 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
+MERGED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:2:1-17:12
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\design-26.0.0-alpha1.aar\8d1e96971563a3fc9093a8aeac2751f1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\96543826d5d103022028ec6008a7b31d\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\transition-26.0.0-alpha1.aar\57c6af47231435cef7d12bc28b79e1a5\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:17:1-31:12
 MERGED from [io.paperdb:paperdb:2.6] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\paperdb-2.6.aar\32fa19e8b9a145698d44d750eaef3439\AndroidManifest.xml:2:1-14:12
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\1d24622811af8b43478f02838c195a64\AndroidManifest.xml:2:1-16:12
+MERGED from [com.mikhaellopez:circularimageview:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circularimageview-2.0.1.aar\e97b0094f60faf946097829bba8c2752\AndroidManifest.xml:2:1-15:12
+MERGED from [com.makeramen:roundedimageview:2.2.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.2.1.aar\1106bf6060f14cec8163f2b44a61eb56\AndroidManifest.xml:2:1-9:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\53b70bd8a4266a33e7447012f2496f51\AndroidManifest.xml:15:1-21:12
 MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:17:1-26:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c3826dfc487327942adac1048e4b4e0a\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:17:1-31:12
@@ -18,9 +24,9 @@ MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\khmai\.
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\a317d0c79a3455bcc3ff998f9691710c\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\3cc415c4ba3918433a0bb36ef85718c6\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:17:1-31:12
-INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:2:1-54:12
 	package
 		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml
@@ -39,6 +45,10 @@ uses-sdk
 ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:5:5-7:41
+MERGED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:5:5-7:41
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:7:5-9:41
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\design-26.0.0-alpha1.aar\8d1e96971563a3fc9093a8aeac2751f1\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\design-26.0.0-alpha1.aar\8d1e96971563a3fc9093a8aeac2751f1\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\96543826d5d103022028ec6008a7b31d\AndroidManifest.xml:21:5-23:78
@@ -49,6 +59,14 @@ MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradl
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:21:5-23:54
 MERGED from [io.paperdb:paperdb:2.6] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\paperdb-2.6.aar\32fa19e8b9a145698d44d750eaef3439\AndroidManifest.xml:8:5-10:41
 MERGED from [io.paperdb:paperdb:2.6] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\paperdb-2.6.aar\32fa19e8b9a145698d44d750eaef3439\AndroidManifest.xml:8:5-10:41
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\1d24622811af8b43478f02838c195a64\AndroidManifest.xml:7:5-9:41
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\1d24622811af8b43478f02838c195a64\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikhaellopez:circularimageview:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circularimageview-2.0.1.aar\e97b0094f60faf946097829bba8c2752\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikhaellopez:circularimageview:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circularimageview-2.0.1.aar\e97b0094f60faf946097829bba8c2752\AndroidManifest.xml:7:5-9:41
+MERGED from [com.makeramen:roundedimageview:2.2.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.2.1.aar\1106bf6060f14cec8163f2b44a61eb56\AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.2.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.2.1.aar\1106bf6060f14cec8163f2b44a61eb56\AndroidManifest.xml:7:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\53b70bd8a4266a33e7447012f2496f51\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\53b70bd8a4266a33e7447012f2496f51\AndroidManifest.xml:19:5-43
 MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\72f56d4bbb433a74463a691780dddfe3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c3826dfc487327942adac1048e4b4e0a\AndroidManifest.xml:5:5-7:41
@@ -83,84 +101,50 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:11:22-64
-uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:12:5-84
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:12:22-81
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:13:5-81
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:12:5-81
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:11:5-81
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:13:22-78
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:14:5-80
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:13:5-80
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:14:22-77
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:15:5-71
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:15:22-68
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:13:22-77
 uses-permission#android.permission.CAMERA
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:16:5-65
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:14:5-65
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:16:22-62
-uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:17:5-68
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:17:22-65
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:14:22-62
 uses-permission#android.permission.CHANGE_NETWORK_STATE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:18:5-79
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:15:5-79
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:18:22-76
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:15:22-76
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:19:5-76
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:16:5-76
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:19:22-73
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:16:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:20:5-79
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:17:5-79
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:20:22-76
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:17:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:21:5-76
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:18:5-76
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:21:22-73
-uses-permission#android.permission.VIBRATE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:22:5-66
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:22:22-63
-uses-permission#android.permission.FLASHLIGHT
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:23:5-69
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:23:22-66
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:18:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:24:5-75
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:19:5-75
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:24:22-72
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:25:5-79
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:25:22-76
-uses-permission#android.permission.ACCESS_COARES_LOCATION
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:26:5-81
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:26:22-78
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:19:22-72
 uses-permission#android.permission.CLEAR_APP_CACHE
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:28:5-74
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:20:5-74
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:28:22-71
-uses-permission#android.permission.READ_CALENDAR
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:30:5-72
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:30:22-69
-uses-permission#android.permission.WRITE_CALENDAR
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:31:5-73
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:31:22-70
-uses-permission#android.permission.GET_TASKS
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:5-68
-	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:22-65
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:20:22-71
 application
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:35:5-61:19
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:23:5-52:19
+MERGED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:9:5-15:19
+MERGED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:9:5-15:19
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:13:5-23:19
+MERGED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:13:5-23:19
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\design-26.0.0-alpha1.aar\8d1e96971563a3fc9093a8aeac2751f1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\design-26.0.0-alpha1.aar\8d1e96971563a3fc9093a8aeac2751f1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\96543826d5d103022028ec6008a7b31d\AndroidManifest.xml:29:5-20
@@ -171,6 +155,10 @@ MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradl
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\c55c463c8b0a8ef3e172d9084706a323\AndroidManifest.xml:29:5-20
 MERGED from [io.paperdb:paperdb:2.6] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\paperdb-2.6.aar\32fa19e8b9a145698d44d750eaef3439\AndroidManifest.xml:12:5-20
 MERGED from [io.paperdb:paperdb:2.6] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\paperdb-2.6.aar\32fa19e8b9a145698d44d750eaef3439\AndroidManifest.xml:12:5-20
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\1d24622811af8b43478f02838c195a64\AndroidManifest.xml:11:5-14:19
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\1d24622811af8b43478f02838c195a64\AndroidManifest.xml:11:5-14:19
+MERGED from [com.mikhaellopez:circularimageview:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circularimageview-2.0.1.aar\e97b0094f60faf946097829bba8c2752\AndroidManifest.xml:11:5-13:38
+MERGED from [com.mikhaellopez:circularimageview:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circularimageview-2.0.1.aar\e97b0094f60faf946097829bba8c2752\AndroidManifest.xml:11:5-13:38
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c3826dfc487327942adac1048e4b4e0a\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c3826dfc487327942adac1048e4b4e0a\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\7d10a3b1e4b62b715a43e95dbe2a2744\AndroidManifest.xml:29:5-20
@@ -187,50 +175,90 @@ MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\3cc415c4ba3918433a0bb36ef85718c6\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\4f0a6c27e056e79f16d308f5be6612b3\AndroidManifest.xml:29:5-20
+	android:supportsRtl
+		ADDED from [com.mikhaellopez:circularimageview:2.0.1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\circularimageview-2.0.1.aar\e97b0094f60faf946097829bba8c2752\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:38:9-41
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:26:9-41
 	android:windowSoftInputMode
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:41:9-51
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:29:9-51
 	android:icon
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:37:9-45
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:25:9-45
 	android:allowBackup
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:36:9-35
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:24:9-35
 	android:theme
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:40:9-44
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:28:9-44
 	android:logo
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:39:9-50
-activity#com.esprit.goga.GogaMainActivity
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:42:9-51:20
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:27:9-50
+activity#com.esprit.goga.LogInActivity
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:30:9-39:20
 	android:screenOrientation
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:45:13-49
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:33:13-49
 	android:label
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:44:13-45
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:32:13-45
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:43:13-45
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:31:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:46:13-50:29
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:34:13-38:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:47:17-69
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:47:25-66
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:49:17-77
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:49:27-74
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:37:27-74
 activity#com.esprit.android.common.activity.MxxBrowserActivity
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:52:9-55:52
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:40:9-43:52
 	android:screenOrientation
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:55:13-49
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:43:13-49
 	android:label
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:54:13-45
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:42:13-45
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:53:13-81
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:41:13-81
 activity#com.esprit.goga.AboutActivity
-ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:56:9-58:60
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:44:9-46:60
 	android:label
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:58:13-57
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:46:13-57
 	android:name
-		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:57:13-42
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:45:13-42
+activity#com.esprit.goga.UploadActivity
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:49:9-52
+	android:name
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:49:19-49
+activity#com.esprit.goga.ActivitySignup
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:50:9-52
+	android:name
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:50:19-49
+activity#com.esprit.goga.GogaMainActivity
+ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:51:9-63
+	android:name
+		ADDED from D:\AndroidStudio\GogaTestAndroid\app\src\main\AndroidManifest.xml:51:19-51
+activity#com.gun0912.tedpermission.TedPermissionActivity
+ADDED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:10:9-14:67
+	android:screenOrientation
+		ADDED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:13:13-49
+	android:configChanges
+		ADDED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:12:13-144
+	android:theme
+		ADDED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:14:13-64
+	android:name
+		ADDED from [gun0912.ted:tedpermission:2.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedpermission-2.1.0.aar\7834bdf22cd0dc8b95a8d143969356d5\AndroidManifest.xml:11:13-75
+provider#android.support.v4.content.FileProvider
+ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:14:9-22:20
+	android:grantUriPermissions
+		ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:18:13-47
+	android:authorities
+		ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:16:13-60
+	android:exported
+		ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:17:13-37
+	android:name
+		ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:15:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:19:13-21:58
+	android:resource
+		ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:21:17-55
+	android:name
+		ADDED from [gun0912.ted:tedbottompicker:1.1.0] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\tedbottompicker-1.1.0.aar\82fd0ffd6acc46c7acdef48ba22152a2\AndroidManifest.xml:20:17-67
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\design-26.0.0-alpha1.aar\8d1e96971563a3fc9093a8aeac2751f1\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\khmai\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\96543826d5d103022028ec6008a7b31d\AndroidManifest.xml:25:5-27:41

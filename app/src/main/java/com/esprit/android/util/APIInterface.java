@@ -7,10 +7,12 @@ package com.esprit.android.util;
 
 import com.esprit.goga.bean.Comments;
 import com.esprit.goga.bean.FeedItem;
+import com.esprit.goga.bean.User;
 
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -45,5 +47,7 @@ public interface APIInterface {
 
     @POST("/api/posts/{id}/downvote")
     Call<FeedItem> downvotePost(@Path("id") String id, @Query("access_token") String token);
+
+
 
 }
