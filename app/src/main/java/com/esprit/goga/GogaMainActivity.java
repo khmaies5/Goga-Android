@@ -72,6 +72,7 @@ public class GogaMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_goga_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(spannableString);
+       // toolbar.setBackgroundColor(R.color.colorPrimary);
         setSupportActionBar(toolbar);
         mImageFragment = (ImageFragment) getSupportFragmentManager().findFragmentById(R.id.main_image_fragment);
         mCommentsFragment = (CommentsFragment) getSupportFragmentManager().findFragmentById(R.id.main_comments_fragment);

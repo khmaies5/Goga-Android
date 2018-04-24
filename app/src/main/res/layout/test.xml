@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#654321"
+        >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="15pt"
+            android:layout_toEndOf="@id/userImage"
+            android:text="khmaies"
+            android:textColor="@color/title"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/userImage" />
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+
+            android:src="@android:drawable/sym_def_app_icon" />
+        <TextView
+            android:id="@+id/commentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="2016-01-01"
+            android:textColor="@color/year"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/commentText"
+            android:paddingTop="5dp"
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="blablablbalablabal"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#123456"
+        android:gravity="center"
+        android:orientation="vertical">
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

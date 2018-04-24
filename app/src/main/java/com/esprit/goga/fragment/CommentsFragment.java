@@ -560,14 +560,6 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        // TODO Auto-generated method stub
 
-            menu.findItem(R.id.action_refresh).setVisible(false);
-            menu.findItem(R.id.action_more).setVisible(false);
-
-         super.onPrepareOptionsMenu(menu);
-    }
 
 }
