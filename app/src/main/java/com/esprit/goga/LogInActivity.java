@@ -48,49 +48,67 @@ public class LogInActivity extends AppCompatActivity {
     FrameLayout frameLayout;
     public static final String PREFS = "MyPrefs";
 
+    boolean isLoggedIn = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signin);
 
-        frameLayout = (FrameLayout)findViewById(R.id.frameLayout);
-        signinback = (ImageView) findViewById(R.id.signinback);
-        signinbtn = (MyTextView) findViewById(R.id.signin);
-        signUpBtn = (MyTextView) findViewById(R.id.acc2);
-        username = (MyEditText) findViewById(R.id.username);
-        password = (MyEditText) findViewById(R.id.password);
+        SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
 
+         isLoggedIn = prefs.getBoolean("isLoggedIn",false);
 
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
+       if (isLoggedIn){
 
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(LogInActivity.this,ActivitySignup.class);
-                startActivity(it);
-            }
-        });
-        signinbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (username.getText().toString().isEmpty()|| password.getText().toString().isEmpty()){
-                    Snackbar snackbar = Snackbar.make(frameLayout,"Please verify all fields",Snackbar.LENGTH_SHORT);
-                    snackbar.show();
-                }else{
-                    loginProcessWithRetrofit(username.getText().toString(), password.getText().toString());
+           startActivity(new Intent(LogInActivity.this,GogaMainActivity.class));
 
-                }
+       } else {
 
 
-            }
-        });
+           setContentView(R.layout.signin);
+
+           frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
+           signinback = (ImageView) findViewById(R.id.signinback);
+           signinbtn = (MyTextView) findViewById(R.id.signin);
+           signUpBtn = (MyTextView) findViewById(R.id.acc2);
+           username = (MyEditText) findViewById(R.id.username);
+           password = (MyEditText) findViewById(R.id.password);
 
 
-        signinback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+           signUpBtn.setOnClickListener(new View.OnClickListener() {
 
-            }
-        });
+               @Override
+               public void onClick(View view) {
+                   Intent it = new Intent(LogInActivity.this, ActivitySignup.class);
+                   startActivity(it);
+               }
+           });
+           signinbtn.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+                       Snackbar snackbar = Snackbar.make(frameLayout, "Please verify all fields", Snackbar.LENGTH_SHORT);
+                       snackbar.show();
+                   } else {
+                       loginProcessWithRetrofit(username.getText().toString(), password.getText().toString());
+
+                   }
+
+
+               }
+           });
+
+
+           signinback.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+
+                   LogInActivity.super.onBackPressed();
+
+
+               }
+           });
+       }
     }
 
 
@@ -301,6 +319,7 @@ private void SendVerifictionToken(final String userId){
         final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(LogInActivity.this);
         progressDoalog.setMessage("Loading....");
+        progressDoalog.show();
 
         authenticateUser.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -353,6 +372,7 @@ private void SendVerifictionToken(final String userId){
                                 SharedPreferences.Editor editor = getSharedPreferences(PREFS, MODE_PRIVATE).edit();
                                 editor.putString("userId", String.valueOf(o.get("userId").getAsString()));
                                 editor.putString("token",String.valueOf(o.get("id").getAsString()));
+                                editor.putBoolean("isLoggedIn",true);
                                 editor.apply();
 
                                 new Handler().postDelayed(new Runnable() {
@@ -382,8 +402,10 @@ private void SendVerifictionToken(final String userId){
 
                         if (e instanceof HttpException) {
                             Toast.makeText(getApplicationContext(),"A problem occured",Toast.LENGTH_SHORT).show();
+                            progressDoalog.dismiss();
                         } else {
                             Toast.makeText(getApplicationContext(),"No network connection",Toast.LENGTH_SHORT).show();
+                            progressDoalog.dismiss();
                         }
                     }
 

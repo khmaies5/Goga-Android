@@ -15,6 +15,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
@@ -46,16 +47,24 @@ public interface UserService {
     @POST("/api/users")
     Observable<Response<ResponseBody>> register(@Field("username") String username, @Field("email") String email, @Field("password") String password);
 
-    @PUT("updateprofile")
-    Observable<Response<ResponseBody>> updateProfile(@Header("x-access-token") String token, @Body User user);
+    @FormUrlEncoded
+    @PATCH("/api/users/{id}")
+    Observable<Response<ResponseBody>> updateProfile(@Path("id") String id,@Field("email") String email,@Field("firstname") String firstname,@Field("lastname") String lastname);
 
-    @GET("api/users/{id}")
+
+
+
+    @GET("/api/users/{id}")
     Observable<User> getUserById(@Path("id") String userid);
+
+    @FormUrlEncoded
+    @PATCH("/api/users/{id}")
+    Observable<Response<ResponseBody>> editProfilePic(@Path("id") String id,@Field("profilepicture") String profilepic);
 
 
     @Multipart
-    @POST("updateprofilepic/{iduser}")
-    Observable<Response<ResponseBody>> uploadSingleFile(@Part MultipartBody.Part file, @Part("name") RequestBody name, @Path("iduser") String userid);
+    @POST("/api/attachments/profilepicture/upload")
+    Observable<Response<ResponseBody>> uploadSingleFile(@Part MultipartBody.Part file, @Part("name") RequestBody name);//, @Path("iduser") String userid);
 
 
     @POST("/api/users/logout")

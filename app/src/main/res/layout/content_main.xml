@@ -24,7 +24,7 @@
         <com.esprit.android.view.MxxPagerSlidingTabStrip
             android:id="@+id/main_tab"
             android:layout_width="match_parent"
-            android:background="@color/mxx_item_theme_color_alpha"
+            android:background="@color/primaryLightColor"
             android:layout_height="48dp" >
         </com.esprit.android.view.MxxPagerSlidingTabStrip>
     </LinearLayout>

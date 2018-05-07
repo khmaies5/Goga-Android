@@ -23,9 +23,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alexzh.circleimageview.CircleImageView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.esprit.android.fabprogresscircle.picasso.GrayscaleCircleTransform;
 import com.esprit.android.util.APIClient;
 import com.esprit.android.util.UserService;
 import com.esprit.android.view.customfonts.MyEditText;
+import com.esprit.android.view.customfonts.MyTextView;
 import com.esprit.goga.bean.User;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -54,7 +58,8 @@ public class ProfileActivity extends AppCompatActivity {
     private Toolbar toolbar;
     ImageView backbtn;
     public static final String PREFS = "MyPrefs";
-    MyEditText username,email,firstname,lastname;
+    MyEditText email,firstname,lastname;
+    MyTextView username;
     EditText adress;
     TextView btnupload,savebtn;
     CircleImageView profilepic;
@@ -74,11 +79,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         backbtn = (ImageView) findViewById(R.id.pro_backbtn);
         profilepic = (CircleImageView) findViewById(R.id.profilepic);
-        username = (MyEditText) findViewById(R.id.username);
+        username = (MyTextView) findViewById(R.id.username);
         email = (MyEditText) findViewById(R.id.email);
         firstname = (MyEditText) findViewById(R.id.firstname);
         lastname = (MyEditText) findViewById(R.id.lastname);
-        adress = (EditText) findViewById(R.id.adress);
+       // adress = (EditText) findViewById(R.id.adress);
         btnupload = (TextView) findViewById(R.id.uploadbtn);
         savebtn = (TextView) findViewById(R.id.savebtn);
 
@@ -90,8 +95,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         //get userid from shared pref
         SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
-        userid = prefs.getString("iduser", null);
-        token = prefs.getString("idToken", null);
+        userid = prefs.getString("userId", null);
+        token = prefs.getString("token", null);
 
 
         Retrofit retrofit = APIClient.getClient();
@@ -110,7 +115,7 @@ public class ProfileActivity extends AppCompatActivity {
                 user.setLastname(lastname.getText().toString());
                 user.setAddress(adress.getText().toString());*/
                 user.setProfilePicture(profilpicUrl);
-                updateProfile(user);
+                updateProfile();
             }
         });
 
@@ -137,7 +142,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void loadUserData(UserService userService) {
-        Observable<User> getUserLogged = userService.getUserById(userid.split("\"")[1]);
+        Observable<User> getUserLogged = userService.getUserById(userid);
 
        /* final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(ActivitySignup.this);
@@ -155,12 +160,17 @@ public class ProfileActivity extends AppCompatActivity {
                 System.out.println(user);
                 userlogged = user;
                 username.setText(user.getUsername());
-               /* adress.setText(user.getAddress());
-                firstname.setText(user.getFirstname());
-                lastname.setText(user.getLastname());*/
+               /* adress.setText(user.getAddress());*/
+                firstname.setText(user.getFirtsname());
+                lastname.setText(user.getLastname());
                 email.setText(user.getEmail());
                 profilpicUrl = user.getProfilePicture();
-                Picasso.with(ProfileActivity.this).load(user.getProfilePicture()).into(profilepic);
+                System.out.println("profile pic "+profilpicUrl);
+                Picasso.with(ProfileActivity.this).load(user.getProfilePicture()).transform(new GrayscaleCircleTransform()).into(profilepic);
+
+               /* Glide.with(ProfileActivity.this)
+                        .load(user.getProfilePicture()).diskCacheStrategy(DiskCacheStrategy.ALL).into(profilepic);
+                 */
 
 
             }
@@ -188,7 +198,7 @@ public class ProfileActivity extends AppCompatActivity {
         if (requestCode == REQUEST_GALLERY_CODE && resultCode == Activity.RESULT_OK) {
            Uri uri = data.getData();
                 String filePath = getRealPathFromURIPath(uri, ProfileActivity.this);
-                File file = new File(filePath);
+               final File file = new File(filePath);
             Retrofit retrofit = APIClient.getClient();
             final UserService userService = retrofit.create(UserService.class);
 
@@ -197,7 +207,7 @@ public class ProfileActivity extends AppCompatActivity {
                 MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), mFile);
                 RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
 
-                Observable<Response<ResponseBody>> fileUpload = userService.uploadSingleFile(fileToUpload, filename,userid.split("\"")[1]);
+                Observable<Response<ResponseBody>> fileUpload = userService.uploadSingleFile(fileToUpload, filename);
                 fileUpload.observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(new Observer<Response<ResponseBody>>() {
@@ -211,15 +221,18 @@ public class ProfileActivity extends AppCompatActivity {
 
                             Picasso.with(ProfileActivity.this).load(userlogged.getProfilePicture()).into(profilepic);
 
-
+                            System.out.println("upload response "+responseBodyResponse);
                             JsonParser parser = new JsonParser();
                             try {
                                 JsonObject o = parser.parse(responseBodyResponse.body().string()).getAsJsonObject();
-                                System.out.println("response"+o.toString());
-                                loadUserData(userService);
+                                System.out.println(" file name "+file.getName().toString());
+                                System.out.println("response upload"+o.getAsJsonObject("result").getAsJsonObject("fields").get("name").toString());
+                                updateProfilePic(file.getName().toString());
+
 
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                //e.printStackTrace();
+                                System.out.println("error parser "+e.getMessage());
                             }
 
                         }
@@ -228,7 +241,7 @@ public class ProfileActivity extends AppCompatActivity {
                         public void onError(@NonNull Throwable e) {
 
 
-                            System.out.println("error"+e.getMessage());
+                            System.out.println("error upload"+e.getMessage());
 
 
 
@@ -272,11 +285,79 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-    private void updateProfile(User user) {
+    private void updateProfilePic(String filename){
+        Retrofit retrofit = APIClient.getClient();
+       final UserService userService = retrofit.create(UserService.class);
+
+        Observable<Response<ResponseBody>> updateProfile = userService.editProfilePic(userid,filename);
+
+
+        updateProfile.subscribeOn(Schedulers.io()) // optional if you do not wish to override the default behavior
+                .observeOn(AndroidSchedulers.mainThread()).subscribeWith(new Observer<Response<ResponseBody>>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull Response<ResponseBody> responseBodyResponse) {
+                JsonParser parser = new JsonParser();
+                try {
+                    JsonObject o = parser.parse(responseBodyResponse.body().string()).getAsJsonObject();
+
+
+                    System.out.println(" update profile img name "+responseBodyResponse.code());
+                    if (responseBodyResponse.code() == 200){
+                        loadUserData(userService);
+
+                        new Handler().postDelayed(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),"updated Successfully", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }, 1500);
+                    }else{
+
+                        new Handler().postDelayed(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),"Something went wrong", Toast.LENGTH_SHORT).show();
+
+                            }
+
+                        }, 1500);
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        } );
+
+
+
+    }
+
+
+    private void updateProfile() {
         Retrofit retrofit = APIClient.getClient();
         UserService userService = retrofit.create(UserService.class);
 
-        Observable<Response<ResponseBody>> updateProfile = userService.updateProfile(token.split("\"")[1],user);
+        Observable<Response<ResponseBody>> updateProfile = userService.updateProfile(userid,email.getText().toString(),firstname.getText().toString(),lastname.getText().toString());
 
         final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(ProfileActivity.this);
@@ -295,7 +376,8 @@ public class ProfileActivity extends AppCompatActivity {
                 try {
                     JsonObject o = parser.parse(responseBodyResponse.body().string()).getAsJsonObject();
 
-                    if (o.get("success").getAsString().equals("true")){
+                    System.out.println(" update profile img name "+responseBodyResponse.code()+responseBodyResponse.toString());
+                    if (responseBodyResponse.code() == 200){
                         progressDoalog.show();
 
                         new Handler().postDelayed(new Runnable() {

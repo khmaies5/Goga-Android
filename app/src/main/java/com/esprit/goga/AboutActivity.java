@@ -6,9 +6,12 @@ import java.util.List;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,11 +24,10 @@ import com.esprit.android.util.MxxSystemBarTintUtil;
 import com.esprit.android.util.SystemBarTintManager;
 import com.esprit.android.view.MxxNotifyingScrollView;
 import com.esprit.android.view.MxxPagerSlidingTabStrip;
-import com.esprit.android.util.MxxTextUtil;
 import com.esprit.android.util.MxxUiUtil;
-import com.esprit.goga.R;
+import com.esprit.android.view.TypefaceSpan;
 
-public class AboutActivity extends FragmentActivity {
+public class AboutActivity extends AppCompatActivity {
 	
 	private ViewPager mViewPager;
 	private MxxPagerSlidingTabStrip mTabStrip;
@@ -35,11 +37,19 @@ public class AboutActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getActionBar().setTitle(MxxTextUtil.getTypefaceSpannableString(this, "About", false));
+		/*getActionBar().setTitle(MxxTextUtil.getTypefaceSpannableString(this, "About", false));
 		getActionBar().setDisplayShowHomeEnabled(false);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		MxxSystemBarTintUtil.setSystemBarTintColor(this);
+		getActionBar().setDisplayHomeAsUpEnabled(true);*/
+
+		SpannableString spannableString = new SpannableString("About");
+		String font = "LockScreen_Clock.ttf";
+		spannableString.setSpan(new TypefaceSpan(font, Typeface.createFromAsset(getAssets(), font)), 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
 		setContentView(R.layout.activity_about);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.abouttoolbar);
+		toolbar.setTitle(spannableString);
+        setSupportActionBar(toolbar);
+        MxxSystemBarTintUtil.setSystemBarTintColor(this);
 		Typeface	typeface = Typeface.createFromAsset(getAssets(), "Roboto-Light.ttf");
 		
 		mViewPager = (ViewPager) findViewById(R.id.about_viewpager);
@@ -47,7 +57,7 @@ public class AboutActivity extends FragmentActivity {
 		mViewPager.setOffscreenPageLimit(3);
 		mTabStrip = (MxxPagerSlidingTabStrip) findViewById(R.id.about_tab);
 		ArrayList<View> views = new ArrayList<View>(2);
-		 view_gag = (MxxNotifyingScrollView) LayoutInflater.from(this).inflate(R.layout.about_layout_9gag, null);
+		 view_gag = (MxxNotifyingScrollView) LayoutInflater.from(this).inflate(R.layout.about_layout_goga, null);
 		 view_me = (MxxNotifyingScrollView) LayoutInflater.from(this).inflate(R.layout.about_layout_author, null);;
 		 ((TextView)view_gag.findViewById(R.id.about_textview)).setTypeface(typeface);
 		 ((TextView)view_me.findViewById(R.id.about_textview)).setTypeface(typeface);
@@ -118,7 +128,8 @@ public class AboutActivity extends FragmentActivity {
 		SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
 		tabLayout = findViewById(R.id.about_tab_layout);
 		FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) tabLayout.getLayoutParams();
-		layoutParams.topMargin = config.getPixelInsetTop(true);
+        layoutParams.topMargin = config.getPixelInsetTop(true) - 62;
+        //layoutParams.topMargin = config.getPixelInsetTop(true);
 //		layoutParams.height = MxxUiUtil.dip2px(this, 48) + config.getPixelInsetTop(true);
 		tabLayout.requestLayout();
 		final int top_margin = MxxUiUtil.dip2px(this, 48);

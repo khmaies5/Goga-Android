@@ -47,15 +47,15 @@ public class MxxBrowserActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		// setmProgressBarIndeterminateVisibility(false);
-		getActionBar().setDisplayShowHomeEnabled(false);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+//		getActionBar().setDisplayShowHomeEnabled(false);
+//		getActionBar().setDisplayHomeAsUpEnabled(true);
 //		MxxSystemBarTintUtil.setSystemBarTintColor(this);
 		 setContentView(R.layout.mxx_common_activity_browser);
 		 initPadding();
 //		mActionBar = getActionBar();
 //		mActionBar.setTitle("");
 //		mActionBar.setDisplayHomeAsUpEnabled(true);
-		setActionBarTitle("");
+//		setActionBarTitle("");
 		View.OnClickListener toolbar_listener = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -139,9 +139,8 @@ public class MxxBrowserActivity extends FragmentActivity {
 			}
 
 			public void onPageStarted(WebView view, String url, Bitmap favicon) {
-				// mUrlTitle.setText("鍔犺浇涓?..");
 //				mActionBar.setTitle("loading...");
-				setActionBarTitle("loading...");
+//				setActionBarTitle("loading...");
 				 mProgressBar.setVisibility(View.VISIBLE);
 //				 mPage_title.setVisibility(View.INVISIBLE);
 			}
@@ -237,7 +236,7 @@ public class MxxBrowserActivity extends FragmentActivity {
 		SpannableString spannableString = new SpannableString(title);
 		String font = "LockScreen_Clock.ttf";
 		spannableString.setSpan(new TypefaceSpan(font, Typeface.createFromAsset(getAssets(), font)), 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-		getActionBar().setTitle(spannableString);
+//		getActionBar().setTitle(spannableString);
 	}
 	
 	@Override

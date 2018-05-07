@@ -3,6 +3,7 @@
 
     <string name="app_name">Goga</string>
     <string name="titke">title</string>
+    <string name="cloud_upload_complete">Uploaded image.</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="description">That&amp;apos;s the image to draw the progressbar around.</string>
@@ -10,6 +11,8 @@
     <string name="menu_action_refresh">refresh</string>
     <string name="menu_action_more">more</string>
     <string name="menu_action_about">about</string>
+    <string name="menu_action_profile">profile</string>
+    <string name="menu_action_logout">logout</string>
     <string name="menu_action_save">save</string>
     <string name="menu_action_weblink">go to web</string>
     <string name="menu_action_copy_title">copy title</string>

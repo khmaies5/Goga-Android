@@ -15,8 +15,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/about_9aga" />
+            android:scaleType="fitXY"
+            android:src="@drawable/about_goga" />
 
         <TextView
             android:id="@+id/about_textview"

@@ -9,6 +9,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.support.v4.content.FileProvider;
+
+import com.esprit.goga.BuildConfig;
 
 public class IntentUtil {
 
@@ -70,9 +73,13 @@ public class IntentUtil {
 							if(saved){
 								File f = new File(imagePath);
 								if (f != null && f.exists() && f.isFile()) {
-									Uri u = Uri.fromFile(f);
+									//Uri u = Uri.fromFile(f);
+                                    System.out.println(" package name "+context.getApplicationContext().getPackageName());
+                                    Uri u = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider", f);
+
 									intent.putExtra(Intent.EXTRA_STREAM, u);
 								}
+								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 								intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 								try {
 									context.startActivity(Intent.createChooser(intent, MxxTextUtil.getTypefaceSpannableString(context, chooserDialogTitleString, MxxTextUtil.Roboto_Light, false)));

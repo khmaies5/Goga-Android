@@ -3,6 +3,7 @@ package com.esprit.goga;
 import android.Manifest;
 import android.app.ActionBar;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
@@ -59,6 +60,7 @@ public class GogaMainActivity extends AppCompatActivity {
     private CommentsFragment mCommentsFragment;
     private UploadFragment mUploadFragment;
     private  FloatingActionButton fab;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,7 +151,7 @@ public class GogaMainActivity extends AppCompatActivity {
                 TedPermission.with(GogaMainActivity.this)
                         .setPermissionListener(permissionlistener)
                         .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
-                        .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA)
                         .check();
             }
         });
@@ -374,6 +376,15 @@ public class GogaMainActivity extends AppCompatActivity {
             return true;
         }else if(item.getItemId() == R.id.action_about){
             startActivity(new Intent(this, AboutActivity.class));
+            return true;
+        }else if(item.getItemId() == R.id.action_profile){
+            startActivity(new Intent(this, ProfileActivity.class));
+            return true;
+        }else if(item.getItemId() == R.id.action_logout){
+            SharedPreferences.Editor editor = getSharedPreferences("MyPrefs",MODE_PRIVATE).edit();
+            editor.clear(); //clear all stored data
+            editor.commit();
+            startActivity(new Intent(this, LogInActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

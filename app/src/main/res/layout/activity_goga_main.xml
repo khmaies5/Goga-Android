@@ -18,7 +18,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/buaa_blue"
+            android:background="@color/primaryColor"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
@@ -36,6 +36,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/fab_margin"
+        android:background="@color/primaryColor"
 
         app:srcCompat="@drawable/plus" />
 

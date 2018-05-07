@@ -62,7 +62,7 @@ public class ActivitySignup extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent it = new Intent(ActivitySignup.this, MainActivity.class);
+                Intent it = new Intent(ActivitySignup.this, LogInActivity.class);
                 startActivity(it);
 
             }
