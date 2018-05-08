@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "440981572284-3lh4cuk664l3i6f52t5tbiamhhesho0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.esprit.goga",
+            "certificate_hash": "646e319abaefa4feb5eee8f33ee7da75902b29d6"
+          }
+        },
+        {
           "client_id": "440981572284-ipg9bih6m1lprf4ol8ps1ivjugrbhgqb.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,20 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440981572284-sbtjfagc761umovpbbu5m1498ftbf4ip.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "esprit.goga.Goga1"
+              }
+            },
+            {
+              "client_id": "440981572284-ipg9bih6m1lprf4ol8ps1ivjugrbhgqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

@@ -1,7 +1,6 @@
 package com.esprit.goga;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,8 +22,6 @@ import com.esprit.android.view.customfonts.MyTextView;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-
-import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -53,6 +50,10 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //InstanceIdService in = new InstanceIdService();
+
+      //  in.onTokenRefresh();
 
         SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
 

@@ -1,4 +1,4 @@
-package com.esprit.android.util;
+package com.esprit.goga;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;

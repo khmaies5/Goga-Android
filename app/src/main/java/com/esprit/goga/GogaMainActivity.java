@@ -1,16 +1,15 @@
 package com.esprit.goga;
 
 import android.Manifest;
-import android.app.ActionBar;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -38,6 +37,7 @@ import com.esprit.goga.fragment.GagFragmentFresh;
 import com.esprit.goga.fragment.GagFragmentHot;
 import com.esprit.goga.fragment.ImageFragment;
 import com.esprit.goga.fragment.UploadFragment;
+import com.google.firebase.messaging.RemoteMessage;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
@@ -60,11 +60,23 @@ public class GogaMainActivity extends AppCompatActivity {
     private CommentsFragment mCommentsFragment;
     private UploadFragment mUploadFragment;
     private  FloatingActionButton fab;
+    RemoteMessage remoteMessage;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            String channelId  = getString(R.string.default_notification_channel_id);
+            String channelName = getString(R.string.default_notification_channel_name);
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                    channelName, NotificationManager.IMPORTANCE_LOW));
+        }
+
         MxxSystemBarTintUtil.setSystemBarTintColor(this);
         SpannableString spannableString = new SpannableString("Goga");
         String font = "LockScreen_Clock.ttf";
