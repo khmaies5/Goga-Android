@@ -8,13 +8,13 @@ import android.support.v4.app.NotificationCompat;
 
 import com.esprit.goga.GogaMainActivity;
 import com.esprit.goga.R;
-/*import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;*/
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
 
 /**
  * Created by khmai on 02/05/2018.
  */
-/*
+
 public class MessageReceiver extends FirebaseMessagingService {
     private static final int REQUEST_CODE = 1;
     private static final int NOTIFICATION_ID = 6578;
@@ -30,6 +30,7 @@ public class MessageReceiver extends FirebaseMessagingService {
 
         final String title = remoteMessage.getData().get("title");
         final String message = remoteMessage.getData().get("body");
+        System.out.println("notification received "+ title +" "+message);
 
         showNotifications(title, message);
     }
@@ -52,4 +53,3 @@ public class MessageReceiver extends FirebaseMessagingService {
         manager.notify(NOTIFICATION_ID, notification);
     }
 }
-*/
